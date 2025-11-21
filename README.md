@@ -1,3 +1,5 @@
+<img src="banner.png" width="100%" alt="FSD Journey Banner">
+
 # 🚀 Full Stack Development Journey — Parvesh Kumar
 
 ![Repo Size](https://img.shields.io/github/repo-size/Parveshgangathia/FSD?style=for-the-badge)
@@ -58,9 +60,13 @@ Each day gets its own folder with files for that day's tasks.
 This repository is created to:
 
 -Track daily learning and progress.
+
 -Build real projects to demonstrate skills.
+
 -Practice Git & GitHub workflows.
+
 -Prepare a portfolio for job applications.
+
 ---
 ###🤝 Contributing & Feedback
 

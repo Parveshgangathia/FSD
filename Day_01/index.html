@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
   <title>My FSD Journey — Parvesh Kumar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header>
-    <h1 >My FSD Journey</h1>
+    <h1>My FSD Journey</h1>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="#home">Home</a></li>
@@ -20,34 +21,55 @@
   </header>
 
   <main>
+
+    <!-- CONTENT WRAPPER START -->
     <div class="content">
-    <section id="home">
-      <h2 class="heanding">First day_01</h2>
-      <p>This is my first day learning HTML. I'm excited to build web pages!</p>
-    </section>
 
-    <section id="about">
-      <h2 class="heading">Hi — I am Parvesh Kumar</h2>
-      <p>I am learning HTML, CSS, and JavaScript to become a full stack developer. I enjoy coding and creating new projects.</p>
-    </section>
+      <section id="home">
+        <h2>First day_01</h2>
+        <p>This is my first day learning HTML. I'm excited to build web pages!</p>
+      </section>
 
-    <article id="hobbies">
-      <h2 class="heading">My Hobbies</h2>
-      <ul>
-        <li>Coding</li>
-        <li>Reading Tech Blogs</li>
-        <li>Playing Video Games</li>
-      </ul>
-    </article>
+      <section id="about">
+        <h2>Hi — I am Parvesh Kumar</h2>
+        <p>I am learning HTML, CSS, and JavaScript to become a full stack developer. I enjoy coding and creating new projects.</p>
+      </section>
 
+      <article id="hobbies">
+        <h2>My Hobbies</h2>
+        <ul>
+          <li>Coding</li>
+          <li>Reading Tech Blogs</li>
+          <li>Playing Video Games</li>
+        </ul>
+      </article>
+
+      <article id="contact">
+        <h3>Contact</h3>
+        <p>Email: pk8352082260@gmail.com</p>
+
+        <h3>Coding</h3>
+        <p>
+          Coding combines logic and creativity to solve problems and build useful applications.
+          It encourages continuous learning, experimentation, and collaboration across teams.
+          By writing clean, maintainable code, developers create reliable user experiences and
+          automate tedious tasks. Coding empowers people to turn ideas into practical digital
+          solutions that improve daily life and workflows.
+        </p>
+      </article>
+
+    </div>
+    <!-- CONTENT WRAPPER END -->
+
+    <!-- SIDEBAR -->
     <aside aria-labelledby="signup-heading">
-      <h3 class="heading">Subscribe</h3>
+      <h3 id="signup-heading">Subscribe</h3>
       <form action="#" method="get">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" />
+        <input type="text" id="name" name="name" placeholder="Enter your name">
 
         <label for="city-input">Select or type a city</label>
-        <input type="text" id="city-input" name="city" list="city-options" />
+        <input type="text" id="city-input" name="city" list="city-options">
         <datalist id="city-options">
           <option value="New York">
           <option value="Los Angeles">
@@ -60,24 +82,11 @@
       </form>
     </aside>
 
-    <article id="contact">
-      <h3 class="heading">Contact</h3>
-      <p>Email: pk8352082260@gmail.com</p>
-
-      <h3 class="heading">Coding</h3>
-      <p>
-        Coding combines logic and creativity to solve problems and build useful applications.
-        It encourages continuous learning, experimentation, and collaboration across teams.
-        By writing clean, maintainable code, developers create reliable user experiences and
-        automate tedious tasks. Coding empowers people to turn ideas into practical digital
-        solutions that improve daily life and workflows.
-      </p>
-    </article>
-    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Parvesh Kumar. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

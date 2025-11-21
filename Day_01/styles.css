@@ -1,0 +1,122 @@
+/* Final cleaned CSS for Day-1 layout */
+
+/* Predictable box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base font */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.45;
+  color: #222;
+}
+
+/* Page wrapper: constrains content and centers it */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row; /* two-column layout on wide screens */
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 16px 10px;
+  background-color: rgb(180, 230, 213);
+  color: #222; /* darker for better contrast */
+  border: 2px solid grey;
+}
+
+/* Typography */
+h1 {
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+h2, h3 {
+  margin: 12px 0 8px;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Main content area + sidebar */
+.content {
+  flex: 1 1 0; /* grows to take available space */
+  min-width: 0; /* prevent overflow with long content */
+}
+
+/* Sidebar (aside) styling */
+aside {
+  flex: 0 0 280px; /* fixed-ish sidebar width on wide screens */
+  background-color: antiquewhite;
+  border: 2px solid grey;
+  padding: 12px;
+}
+
+/* Make sections and articles normal block flow (not flex) */
+section, article {
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Form & controls spacing */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+}
+
+/* Lists and paragraphs spacing */
+p {
+  margin: 8px 0;
+}
+
+ul {
+  margin: 8px 0 16px 20px;
+  padding: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 12px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 720px) {
+  main {
+    flex-direction: column;
+    padding: 10px;
+  }
+  aside {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  nav ul {
+    justify-content: center;
+    gap: 12px;
+  }
+}

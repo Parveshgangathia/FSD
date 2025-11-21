@@ -6,9 +6,12 @@
 ![Last Commit](https://img.shields.io/github/last-commit/Parveshgangathia/FSD?style=for-the-badge)
 ![Top Languages](https://img.shields.io/github/languages/top/Parveshgangathia/FSD?style=for-the-badge)
 
+Welcome to my **Full Stack Developer (FSD)** learning journey!  
+This repository contains all my daily practice files, tasks, and small projects as I learn to become a complete full-stack developer.
+
 ---
 
-## 🔰 Tech Stack
+## 🔰 Tech Stack I’m Learning
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7E017?style=for-the-badge&logo=javascript&logoColor=black)
@@ -19,40 +22,48 @@
 ![VS Code](https://img.shields.io/badge/VS%20Code-0078D7?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ---
-
 ## 🔖 About this repository
 This repository tracks my **Full Stack Developer (FSD)** learning journey.  
 I use a day-by-day folder structure to practice and build small projects that become portfolio pieces.
 
 ---
 
-## 📅 Day-wise Progress
+## 📅 **Day-wise Progress**
 
-### 📌 Day 01 — HTML + CSS Foundation
-- Created a semantic HTML structure with `header`, `nav`, `main`, `article`, `section`, `aside`, and `footer`.
-- Built a responsive two-column layout (content + sidebar) using Flexbox.
-- Practiced forms and semantic tags.
-- Final files:
-  - `Day_01/index.html`
-  - `Day_01/styles.css`
+### 📌 **Day 01 — HTML + CSS + JavaScript + Python + Git**
+**Completed Tasks:**
+- Built a fully semantic HTML structure  
+- Styled the page using Flexbox + responsive layout  
+- Added interactive JavaScript (button click → change text)  
+- Created a Python script to print even numbers  
+- Organized project into folders  
+- Pushed all tasks to GitHub using proper Git workflow  
+- Added README, badges, and banner  
 
-*(More days and projects will be added as I progress.)*
+**Files included:**
+```
+Day_01/
+├── index.html
+├── styles.css
+├── script.js
+└── even_number.py
+```
 
 ---
 
-## 📂 Folder Structure
+## 📂 Repository Structure
+
 ```text
 FSD/
 ├── Day_01/
 │   ├── index.html
-│   └── styles.css
-├── Day_02/   (coming soon)
-├── Day_03/   (coming soon)
+│   ├── styles.css
+│   ├── script.js
+│   └── even_number.py
+├── Day_02/ (coming soon)
+├── Day_03/ (coming soon)
 └── README.md
 ```
-
-
-Each day gets its own folder with files for that day's tasks.
 
 ---
 
@@ -76,15 +87,17 @@ I’m learning and welcome feedback. If you see something I can improve (code, s
 ❤️ Support & Contact
 
 If you like my progress, please ⭐ the repo — it motivates me to keep building!
+
 Contact: pk8352082260@gmail.com
 
 ---
 
 ## 🛠️ Technologies I’m Learning
+
 ### **Frontend**
 - HTML5
-- CSS3 (Flexbox, Grid)
-- JavaScript (DOM, Events, ES6+)
+- CSS
+- JavaScript(process)
 - React (planned)
 - node.js (planned)
 
@@ -92,6 +105,7 @@ Contact: pk8352082260@gmail.com
 - Python
 - Django / Django REST Framework
 - APIs & JSON
+-JavaScript
 
 ### **Tools**
 - Git & GitHub
@@ -100,6 +114,4 @@ Contact: pk8352082260@gmail.com
 
 ---
 
-Thanks for visiting my journey — more updates coming soon! 🚀
-
----
+> More updates coming soon… 🚀🔥

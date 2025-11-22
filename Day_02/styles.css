@@ -1,0 +1,87 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Centers the form on the page */
+.registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 20px;
+}
+/* center algin */
+header, h1, h2 {
+    text-align: center;
+}
+/* to make nav item algin as row */
+nav {
+    display: flex;
+    justify-content: center; /* centers nav */
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;            /* makes nav horizontal */
+    gap: 20px;                /* space between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+/* Inner box that fixes the leaking issue */
+.form-box {
+    width: 350px;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #cac9c9;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    background: white;
+}
+
+/* Label styling */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input fields */
+input, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #2b2828;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Gender options row using flexbox + gap */
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Submit button */
+button {
+    padding: 12px;
+    border-radius: 6px;
+    background-color: rgb(4, 115, 241);
+    border: 0px;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+    transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: rgb(2, 90, 200);
+    cursor: pointer;
+    transform: translateY(-2px);
+}

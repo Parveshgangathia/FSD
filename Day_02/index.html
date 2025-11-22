@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+         <h1>Welcome to my FSD journey — Day 02</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Register</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       
+        <h2>Registration Form</h2>
+        <div class="registration">
+        <form class="form-box">
+            <!-- Name -->
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+            <!-- Password -->
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+
+            <!-- Age -->
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required><br><br>
+
+            <!-- Gender (radio buttons) -->
+            <p>Choose your gender:</p>
+            <div class="form-row">
+                <label><input type="radio" ...> Male</label>
+                <label><input type="radio" ...> Female</label>
+                    <label><input type="radio" ...> Prefer not to say</label>
+            </div>
+
+
+            <!-- City (select) -->
+            <label for="city">Choose your city:</label><br>
+            <select id="city" name="city" required>
+                <option value="">Select your city</option>
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="chandigarh">Chandigarh</option>
+            </select>
+            <br><br>
+
+            <!-- Submit -->
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+    </main>
+<script src="script.js"></script>
+<section class="footer">
+    <p>&copy; 2025 Parvesh Kumar. All rights reserved.</p>
+</body>
+</html>

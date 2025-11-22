@@ -92,7 +92,11 @@ FSD/
 │   ├── styles.css
 │   ├── script.js
 │   └── even_number.py
-├── Day_02/ (coming soon)
+├──Day_02/
+├── index.html
+├── styles.css
+├── script.js
+└── filter_names.py
 ├── Day_03/ (coming soon)
 └── README.md
 ```

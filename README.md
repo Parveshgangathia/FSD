@@ -41,31 +41,22 @@ I use a day-by-day folder structure to practice and build small projects that be
 - Added README, badges, and banner
   ---
 
-### 📌 **Day 02 — HTML + CSS + JavaScript + Python**
+### 📌 Day 02 — HTML + CSS + JavaScript + Python (Completed)
+**Summary:**
+- **HTML:** Built a full registration form  
+- **CSS:** Centered form, added padding, border-radius, cleaner UI, hover effect  
+- **JavaScript:** Form validation + preventDefault + reading values + template-string alert  
+- **Python:** Printed names longer than 5 characters (loop + condition + list append)
 
-**Completed Tasks:**
+### 📌 Day 03 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+**Summary:**
+- **CSS (Flexbox Master Level):** Built 3-box centered layout using gap, justify-content, align-items  
+- **JavaScript (DOM Interaction):** Toggle hidden text using querySelector(), style.display, innerText  
+- **Python:** Dictionary logic — print students scoring above 80 + count  
+- **Django:** Installed Django, created first project folder, verified server runs on localhost
 
-#### ✅ HTML
-- Built a complete **Registration Form**
-- Used: `<form>`, `<input>`, `<label>`, `<textarea>`, radio buttons, dropdown, button
 
-#### ✅ CSS
-- Styled the registration form UI  
-- Centered the form using **Flexbox**  
-- Added padding, border-radius, clean inputs  
-- Added hover effect to submit button  
-- Included shadows + modern minimal styling  
 
-#### ✅ JavaScript
-- Added form interaction  
-- Used: `addEventListener("submit")`, `event.preventDefault()`  
-- Read input values using JS  
-- Basic validation for empty fields  
-- Show alert using **template strings**
-
-#### ✅ Python
-- Wrote script to filter names longer than 5 characters  
-- Practiced loops, conditions, appending into new list  
 
 **Files included:**
 ```
@@ -76,9 +67,26 @@ Day_01/
 └── even_number.py
 Day_02/
 ├── index.html
+├── about.html
+├── contact.html
 ├── styles.css
 ├── script.js
 └── filter_names.py
+Day_03/
+├── index.html
+├── about.html
+├── contact.html
+├── styles.css
+├── hidden_message.js
+├── python
+│   ├── students_score.py
+├── django
+│   ├──mysite
+│   │   ├──mysite
+│   │   ├──myapp
+│   │   ├──db.sqlite3
+└── └── └──manage.py
+Day_04/
 ```
 
 ---
@@ -93,11 +101,24 @@ FSD/
 │   ├── script.js
 │   └── even_number.py
 ├──Day_02/
-├── index.html
-├── styles.css
-├── script.js
-└── filter_names.py
-├── Day_03/ (coming soon)
+│   ├── index.html
+│   ├── styles.css
+│   ├── script.js
+│   └── filter_names.py
+├── Day_03/ 
+│   ├── index.html
+│   ├── about.html
+│   ├── contact.html
+│   ├── styles.css
+│   ├── hidden_message.js
+│   ├── python
+│   │   ├── students_score.py
+│   ├── django
+│   │   ├──mysite
+│   │   ├──mysite
+│   │   ├──myapp
+│   │   ├──db.sqlite3
+│   │   └──manage.py
 └── README.md
 ```
 

@@ -38,7 +38,34 @@ I use a day-by-day folder structure to practice and build small projects that be
 - Created a Python script to print even numbers  
 - Organized project into folders  
 - Pushed all tasks to GitHub using proper Git workflow  
-- Added README, badges, and banner  
+- Added README, badges, and banner
+  ---
+
+### 📌 **Day 02 — HTML + CSS + JavaScript + Python**
+
+**Completed Tasks:**
+
+#### ✅ HTML
+- Built a complete **Registration Form**
+- Used: `<form>`, `<input>`, `<label>`, `<textarea>`, radio buttons, dropdown, button
+
+#### ✅ CSS
+- Styled the registration form UI  
+- Centered the form using **Flexbox**  
+- Added padding, border-radius, clean inputs  
+- Added hover effect to submit button  
+- Included shadows + modern minimal styling  
+
+#### ✅ JavaScript
+- Added form interaction  
+- Used: `addEventListener("submit")`, `event.preventDefault()`  
+- Read input values using JS  
+- Basic validation for empty fields  
+- Show alert using **template strings**
+
+#### ✅ Python
+- Wrote script to filter names longer than 5 characters  
+- Practiced loops, conditions, appending into new list  
 
 **Files included:**
 ```
@@ -47,6 +74,11 @@ Day_01/
 ├── styles.css
 ├── script.js
 └── even_number.py
+Day_02/
+├── index.html
+├── styles.css
+├── script.js
+└── filter_names.py
 ```
 
 ---
@@ -60,7 +92,11 @@ FSD/
 │   ├── styles.css
 │   ├── script.js
 │   └── even_number.py
-├── Day_02/ (coming soon)
+├──Day_02/
+├── index.html
+├── styles.css
+├── script.js
+└── filter_names.py
 ├── Day_03/ (coming soon)
 └── README.md
 ```

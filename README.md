@@ -56,9 +56,18 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **Django:** Installed Django, created first project folder, verified server runs on localhost
 
 
+###📌 Day 04 — Django Templates + Static Files + JS + Python (Completed)
+**Summary:**
+-Created full Django template structure (templates/myapp/)
+-Built base.html with {% block %} + reusable layout
+-Added static files system (css, images, js)
+-Connected CSS + dynamic mobile navigation JS + combined external JS file
+-Created home.html, about.html, and contact.html extending base template
+-Fixed errors: TemplateDoesNotExist, static 404, migrations warning
+-Practiced Python function logic (filter numbers, count vowels, remove duplicates)
+-Tested all pages: Home, About, Contact — fully responsive UI
 
-
-**Files included:**
+## 📂 Files included:
 ```
 Day_01/
 ├── index.html
@@ -87,6 +96,14 @@ Day_03/
 │   │   ├──db.sqlite3
 └── └── └──manage.py
 Day_04/
+├── django
+│   ├── mysite
+├── python_practice
+│   ├── filter_numbers.py
+│   ├── split_even_odd.py
+│   ├── count_long_strings.py
+│   ├── remove_duplicates.py
+│   └── count_vowels.py
 ```
 
 ---
@@ -119,7 +136,31 @@ FSD/
 │   │   ├──myapp
 │   │   ├──db.sqlite3
 │   │   └──manage.py
+Day_04/
+├── django
+│   ├── mysite/
+│   │   ├── mysite/
+│   │   ├── myapp/
+│   │   │   ├── templates/
+│   │   │   │   ├── myapp/
+│   │   │   │   │   ├── base.html
+│   │   │   │   │   ├── home.html
+│   │   │   │   │   ├── about.html
+│   │   │   │   │   └── contact.html
+│   │   │   ├── static/myapp/css/style.css
+│   │   │   ├── static/myapp/js/main.js
+│   │   │   ├── static/myapp/images/avatar.png (optional)
+│   │   │   └── views.py / urls.py
+│   │   ├── db.sqlite3
+│   │   └── manage.py
+├── python_practice
+│   ├── filter_numbers.py
+│   ├── split_even_odd.py
+│   ├── count_long_strings.py
+│   ├── remove_duplicates.py
+│   └── count_vowels.py
 └── README.md
+
 ```
 
 ---

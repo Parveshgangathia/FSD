@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Parvesh — My Site{% endblock %}</title>
+
+  <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{% url 'home' %}">Parvesh Kumar</a>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© {{ now|date:"Y" }} — Built by Parvesh • Kangra, Himachal Pradesh</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'myapp/js/script.js' %}">
+  </script>
+</body>
+</html>

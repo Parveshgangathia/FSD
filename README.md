@@ -47,25 +47,37 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **CSS:** Centered form, added padding, border-radius, cleaner UI, hover effect  
 - **JavaScript:** Form validation + preventDefault + reading values + template-string alert  
 - **Python:** Printed names longer than 5 characters (loop + condition + list append)
-
+---
+ 
 ### 📌 Day 03 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
 **Summary:**
 - **CSS (Flexbox Master Level):** Built 3-box centered layout using gap, justify-content, align-items  
 - **JavaScript (DOM Interaction):** Toggle hidden text using querySelector(), style.display, innerText  
 - **Python:** Dictionary logic — print students scoring above 80 + count  
 - **Django:** Installed Django, created first project folder, verified server runs on localhost
-
-
-###📌 Day 04 — Django Templates + Static Files + JS + Python (Completed)
+  
+---
+### 📌 **Day 04 — Django Templates + Static Files + JS + Python (Completed)**
 **Summary:**
--Created full Django template structure (templates/myapp/)
--Built base.html with {% block %} + reusable layout
--Added static files system (css, images, js)
--Connected CSS + dynamic mobile navigation JS + combined external JS file
--Created home.html, about.html, and contact.html extending base template
--Fixed errors: TemplateDoesNotExist, static 404, migrations warning
--Practiced Python function logic (filter numbers, count vowels, remove duplicates)
--Tested all pages: Home, About, Contact — fully responsive UI
+
+- Created full Django template structure (templates/myapp/)  
+- Built base.html with {% block %} + reusable layout  
+- Added static files system (css, images, js)  
+- Connected CSS + dynamic mobile navigation JS + combined external JS file  
+- Created home.html, about.html, and contact.html extending base template  
+- Fixed errors: TemplateDoesNotExist, static 404, migrations warning  
+- Practiced Python function logic (filter numbers, count vowels, remove duplicates)  
+- Tested all pages: Home, About, Contact — fully responsive UI
+
+---
+
+### 📌 **Day 05 — JavaScript + Python + Django Mini Project (Completed)**
+**Summary:**
+
+- **JavaScript (UI Level 2):** Built a mini To-Do App with add, delete, mark-complete, clear all, error message, and smooth transitions using HTML + CSS + JS.  
+- **Python:** Worked with list of dictionaries — filtered expensive items using loop + append + return and printed names + count.  
+- **Django:** Created `todo` app, added templates (`home.html`, `add.html`), added URLs, and built views using temporary list storage (`tasks = []`) to display and add tasks.
+
 
 ## 📂 Files included:
 ```
@@ -104,6 +116,25 @@ Day_04/
 │   ├── count_long_strings.py
 │   ├── remove_duplicates.py
 │   └── count_vowels.py
+Day_05/
+├── js_todo_app/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── python_task/
+│   └── expensive_items.py
+├── django/
+│   ├── manage.py
+│   ├── <project_folder>/
+│   └── todo/
+│       ├── templates/
+│       │   └── todo/
+│       │       ├── home.html
+│       │       └── add.html
+│       ├── views.py
+│       ├── urls.py
+│       └── apps.py
+
 ```
 
 ---
@@ -159,6 +190,24 @@ Day_04/
 │   ├── count_long_strings.py
 │   ├── remove_duplicates.py
 │   └── count_vowels.py
+Day_05/
+├── js_todo_app/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── python_task/
+│   └── expensive_items.py
+├── django/
+│   ├── manage.py
+│   ├── <project_folder>/
+│   └── todo/
+│       ├── templates/
+│       │   └── todo/
+│       │       ├── home.html
+│       │       └── add.html
+│       ├── views.py
+│       ├── urls.py
+│       └── apps.py
 └── README.md
 
 ```

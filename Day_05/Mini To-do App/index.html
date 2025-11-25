@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Day 05 — Mini To‑Do App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app" role="main" aria-labelledby="title">
+      <header>
+        <h1 id="title">Day 05 — Mini To‑Do App (UI Task)</h1>
+        <div class="meta">HTML • CSS • JavaScript</div>
+      </header>
+
+      <form id="taskForm" novalidate>
+        <input
+          id="taskInput"
+          type="text"
+          placeholder="Add a new task and press Enter or Add"
+          aria-label="Task input"
+          autocomplete="off"
+        />
+        <button id="addBtn" type="submit">Add</button>
+      </form>
+
+      <div class="message" id="message" aria-live="polite"></div>
+
+      <div class="top-row">
+        <div class="count" id="count">0 tasks</div>
+        <div class="controls">
+          <button id="clearAll" class="btn-ghost">Clear all</button>
+        </div>
+      </div>
+
+      <ul id="list" class="list" aria-live="polite"></ul>
+
+      <div id="emptyState" class="empty" hidden>
+        No tasks yet — add your first task above ✨
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

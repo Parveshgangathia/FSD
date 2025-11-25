@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My To-Do List</title>
+</head>
+<body>
+  <h1>My To-Do List</h1>
+
+  <p>Total tasks: {{ tasks|length }}</p>
+
+  {% if tasks %}
+    <ul>
+      {% for t in tasks %}
+        <li>{{ t }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks yet.</p>
+  {% endif %}
+
+  <a href="{% url 'add' %}">Add New Task</a>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* ---------------------------
+   Base Reset + Global Styles
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: #0f172a; /* dark navy */
+  color: #e2e8f0; /* light grey */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* ---------------------------
+   Header
+---------------------------- */
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------
+   Card Layout
+---------------------------- */
+.card {
+  background: #1e293b;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Fields */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.field input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  outline: none;
+}
+
+/* Helper text */
+small {
+  color: #64748b;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ---------------------------
+   Checkbox group
+---------------------------- */
+fieldset {
+  border: 1px solid #334155;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 6px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ---------------------------
+   Buttons
+---------------------------- */
+.btn {
+  background: #334155;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: #475569;
+}
+
+.btn.primary {
+  background: #0ea5e9;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.btn.primary:hover {
+  background: #38bdf8;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #475569;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+/* Small button */
+.btn.small {
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+/* ---------------------------
+   Output Box
+---------------------------- */
+.output-area {
+  margin-top: 20px;
+}
+
+.password-display {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #93c5fd;
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+}
+
+.output-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.strength {
+  margin-top: 15px;
+}
+
+.strength label {
+  font-size: 0.85rem;
+}
+
+meter {
+  width: 100%;
+  height: 10px;
+}
+
+/* ---------------------------
+   Message / Toast
+---------------------------- */
+.message {
+  margin-top: 12px;
+  min-height: 20px;
+  font-size: 0.85rem;
+  color: #22c55e; /* green success */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.message.show {
+  opacity: 1;
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+.notes {
+  margin-top: 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Password Generator —FSD Day 06</title>
+
+    <!-- CSS stylesheet  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container" role="main" aria-labelledby="pageTitle">
+      <header>
+        <h1 id="pageTitle">Password Generator —FSD Day 06</h1>
+        <p class="subtitle">
+          Customize length and character types — then generate a secure
+          password.
+        </p>
+      </header>
+
+      <!-- Card / UI -->
+      <section class="card" aria-label="Password generator">
+        <!-- Controls -->
+        <form id="pwForm" class="controls" novalidate>
+          <!-- Length -->
+          <div class="field">
+            <label for="length">Password length</label>
+            <input
+              id="length"
+              name="length"
+              type="number"
+              min="4"
+              max="64"
+              value="12"
+              inputmode="numeric"
+              aria-describedby="lengthHelp"
+            />
+            <small id="lengthHelp">Choose between 4 and 64 characters</small>
+          </div>
+
+          <!-- Character type checkboxes -->
+          <fieldset class="field" aria-describedby="charsetHelp">
+            <legend>Include characters</legend>
+
+            <div class="checkbox">
+              <input type="checkbox" id="lowercase" name="lowercase" checked />
+              <label for="lowercase">Lowercase (a–z)</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="uppercase" name="uppercase" />
+              <label for="uppercase">Uppercase (A–Z)</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="numbers" name="numbers" />
+              <label for="numbers">Numbers (0–9)</label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="symbols" name="symbols" />
+              <label for="symbols">Symbols (!@#$...)</label>
+            </div>
+
+            <small id="charsetHelp" class="help"
+              >At least one character type must be selected.</small
+            >
+          </fieldset>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button id="generateBtn" type="button" class="btn primary">
+              Generate
+            </button>
+            <button
+              id="regenBtn"
+              type="button"
+              class="btn ghost"
+              title="Generate again"
+            >
+              Regenerate
+            </button>
+          </div>
+        </form>
+
+        <!-- Output area -->
+        <div class="output-area">
+          <label for="passwordDisplay">Generated password</label>
+
+          <!-- readonly input to display password (easier to select & copy) -->
+          <input
+            id="passwordDisplay"
+            class="password-display"
+            type="text"
+            readonly
+            aria-live="polite"
+            aria-label="Generated password"
+            value=""
+          />
+
+          <div class="output-actions">
+            <button id="copyBtn" type="button" class="btn">
+              Copy to clipboard
+            </button>
+            <button
+              id="eyeBtn"
+              type="button"
+              class="btn small"
+              title="Show / hide"
+            >
+              Show
+            </button>
+          </div>
+
+          <!-- optional strength meter -->
+          <div class="strength">
+            <label for="strengthMeter">Strength</label>
+            <meter
+              id="strengthMeter"
+              min="0"
+              max="4"
+              low="1"
+              high="3"
+              optimum="4"
+              value="0"
+            ></meter>
+          </div>
+
+          <!-- message area for validation / copy feedback -->
+          <div
+            id="message"
+            class="message"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Footer / Notes -->
+      <footer class="notes">
+        <p class="muted">
+          Note: This demo does not store generated passwords. Use a password
+          manager for long-term storage.
+        </p>
+      </footer>
+    </main>
+
+    <!--  JavaScript file  -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

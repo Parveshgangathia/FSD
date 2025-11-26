@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>My To-Do List</h1>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for m in messages %}
+        <li>{{ m }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <p>Total tasks: {{ total }} • Completed: {{ completed }}</p>
+
+  {% if tasks %}
+    <ul id="taskList">
+      {% for t in tasks %}
+        <li data-pk="{{ t.pk }}" data-completed="{{ t.completed|yesno:'1,0' }}">
+          <span class="{% if t.completed %}completed-text{% endif %}">{{ t.title }}</span>
+          <div>
+            <!-- AJAX buttons (no form submit) -->
+            <button class="btn-toggle {% if t.completed %}btn-undo{% else %}btn-done{% endif %}" data-action="toggle">
+              {% if t.completed %}Undo{% else %}Done{% endif %}
+            </button>
+
+            <button class="btn-delete" data-action="delete">Delete</button>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks yet.</p>
+  {% endif %}
+
+  <a href="{% url 'todo:add' %}" class="btn-add">Add New Task</a>
+</div>
+
+<!-- include AJAX script -->
+<script src="{% static 'todo/ajax.js' %}" defer></script>
+</body>
+</html>

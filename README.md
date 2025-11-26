@@ -78,6 +78,15 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **Python:** Worked with list of dictionaries — filtered expensive items using loop + append + return and printed names + count.  
 - **Django:** Created `todo` app, added templates (`home.html`, `add.html`), added URLs, and built views using temporary list storage (`tasks = []`) to display and add tasks.
 
+---
+### 📌 **Day 06 — Python Logic + JavaScript UI Project + Django Update (Completed)**
+**Summary:**
+
+- **Python (Medium Logic Task):** Filtered products using `filter_by_price()`, returned only items with price ≥ given minimum, printed **name**, **brand**, **price**, and sorted results using **sorted()** with lambda.  
+- **JavaScript (Level-2 UI Project):** Built a **Password Generator App** with password length input, checkboxes for numbers/symbols/uppercase, **Generate** button, password display box, **Copy to Clipboard** button, and smooth password animation.  
+- **Django (Important Points):** Created clean folder structure for Day_06, reviewed previous Django work, prepared project for next upgrade (CRUD + models), and practiced proper Django setup and organization.
+
+
 
 ## 📂 Files included:
 ```
@@ -134,6 +143,27 @@ Day_05/
 │       ├── views.py
 │       ├── urls.py
 │       └── apps.py
+Day_06/
+├── django/
+│   ├── manage.py
+│   ├── mysite/
+│   │   ├── mysite/
+│   │   ├── db.sqlite3
+│   │   ├── todo/
+│   │   │   ├── models.py
+│   │   │   ├── views.py
+│   │   │   ├── urls.py
+│   │   │   ├── templates/
+│   │   │   │   └── todo/
+│   │   │   │        ├── home.html
+│   │   │   │        └── add.html
+│   │   │   ├── static/
+│   │   │   │   └── todo/
+│   │   │   │        ├── style.css
+│   │   │   │        └── ajax.js
+│   │   │   └── apps.py
+├── python_task/
+│   └── filter_by_price.py
 
 ```
 
@@ -208,6 +238,27 @@ Day_05/
 │       ├── views.py
 │       ├── urls.py
 │       └── apps.py
+Day_06/
+├── django/
+│   ├── manage.py
+│   ├── mysite/
+│   │   ├── mysite/
+│   │   ├── db.sqlite3
+│   │   ├── todo/
+│   │   │   ├── models.py
+│   │   │   ├── views.py
+│   │   │   ├── urls.py
+│   │   │   ├── templates/
+│   │   │   │   └── todo/
+│   │   │   │        ├── home.html
+│   │   │   │        └── add.html
+│   │   │   ├── static/
+│   │   │   │   └── todo/
+│   │   │   │        ├── style.css
+│   │   │   │        └── ajax.js
+│   │   │   └── apps.py
+├── python_task/
+│   └── filter_by_price.py
 └── README.md
 
 ```

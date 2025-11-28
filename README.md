@@ -92,8 +92,17 @@ I use a day-by-day folder structure to practice and build small projects that be
 **Summary:**
 
 - **JavaScript (Fun UI Project):** Built a Random Quote Generator with a centered card, smooth fade animation, New Quote button, copy-to-clipboard feature, and 15–20 quotes stored in an array.  
-- **Python:** NamePrint names in reverse order.py, Print only first names in Title Case.py, Python Name Formatter Program.py, User input name Format.py.  
-
+- **Python:** NamePrint names in reverse order.py, Print only first names in Title Case.py, Python Name Formatter Program.py, User input name Format.py.
+  
+---
+ 
+### 📌 Day 03 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+**Summary:**  
+- **JavaScript:**Dynamic Card Generator component added (grid, create form, fade-in/out, delete, clear-all). 
+- **Python:** Python script list_comprehensions.py with list comprehensions + normal loop equivalents. 
+- **Django:** Finished full CRUD for the todo app (Create → Read → Update → Delete).
+  
+---
 
 ## 📂 Files included:
 ```
@@ -181,6 +190,13 @@ Day_07/
 │   ├──Print only first names in Title Case.py
 │   ├──Python Name Formatter Program.py
 │   └──User input name Format.py
+Day_08/
+├── django/
+│   ├── todo/
+├── frontend/
+│   ├── dynamic_cards.html 
+└── python/
+    └── list_comprehensions.py  # new: LC exercises + normal loop versions
 
 ```
 
@@ -286,6 +302,13 @@ Day_07/
 │   ├──Print only first names in Title Case.py
 │   ├──Python Name Formatter Program.py
 │   └──User input name Format.py
+Day_08/
+├── django/
+│   ├── todo/
+├── frontend/
+│   ├── dynamic_cards.html 
+└── python/
+    └── list_comprehensions.py  # new: LC exercises + normal loop versions
 └── README.md
 
 ```

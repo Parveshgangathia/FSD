@@ -86,6 +86,13 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **JavaScript (Level-2 UI Project):** Built a **Password Generator App** with password length input, checkboxes for numbers/symbols/uppercase, **Generate** button, password display box, **Copy to Clipboard** button, and smooth password animation.  
 - **Django (Important Points):** Created clean folder structure for Day_06, reviewed previous Django work, prepared project for next upgrade (CRUD + models), and practiced proper Django setup and organization.
 
+---
+
+### 📌 **Day 07 — JavaScript Fun Project + Python Easy Task (Completed) ##Rest day**
+**Summary:**
+
+- **JavaScript (Fun UI Project):** Built a Random Quote Generator with a centered card, smooth fade animation, New Quote button, copy-to-clipboard feature, and 15–20 quotes stored in an array.  
+- **Python:** NamePrint names in reverse order.py, Print only first names in Title Case.py, Python Name Formatter Program.py, User input name Format.py.  
 
 
 ## 📂 Files included:
@@ -164,6 +171,16 @@ Day_06/
 │   │   │   └── apps.py
 ├── python_task/
 │   └── filter_by_price.py
+Day_07/
+├── Random Qoute Generator/
+│   ├── index.html
+│   ├──script.js
+│   └──style.css
+└── python/
+│   ├──Print names in reverse order.py
+│   ├──Print only first names in Title Case.py
+│   ├──Python Name Formatter Program.py
+│   └──User input name Format.py
 
 ```
 
@@ -259,6 +276,16 @@ Day_06/
 │   │   │   └── apps.py
 ├── python_task/
 │   └── filter_by_price.py
+Day_07/
+├── Random Qoute Generator/
+│   ├── index.html
+│   ├──script.js
+│   └──style.css
+└── python/
+│   ├──Print names in reverse order.py
+│   ├──Print only first names in Title Case.py
+│   ├──Python Name Formatter Program.py
+│   └──User input name Format.py
 └── README.md
 
 ```

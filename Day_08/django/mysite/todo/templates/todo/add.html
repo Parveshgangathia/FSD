@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Add Task</title>
+  <link rel="stylesheet" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Add Task</h1>
+
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+
+  <form method="post" action="{% url 'todo:add' %}">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Enter task" required maxlength="200">
+    <button type="submit">Add</button>
+  </form>
+
+  <a href="{% url 'todo:home' %}" class="btn-add" style="background:#6b7280">Back</a>
+
+</div>
+
+</body>
+</html>

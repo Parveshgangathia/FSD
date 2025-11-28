@@ -1,0 +1,175 @@
+
+
+/* Component CSS — feel free to merge with your main style.css */
+
+/* Basic container */
+.container {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 22px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin: 0 0 18px;
+  font-size: 1.9rem;
+  color: #222;
+}
+
+/* Form layout */
+.card-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.card-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.card-form input[type="text"],
+.card-form input[type="url"],
+.card-form textarea {
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #e6e7ea;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.card-form textarea { resize: vertical; }
+
+/* Form actions span full width */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Cards grid */
+.cards-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+/* Card */
+.card {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(16,24,40,0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, opacity 200ms ease;
+  opacity: 0; /* start hidden; animation will fade in */
+  transform: translateY(6px);
+}
+
+/* Fade-in class applied by JS */
+.card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card body */
+.card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0;
+  color: #111827;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #374151;
+  margin: 0;
+  flex: 1;
+}
+
+/* Controls row */
+.card-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  border-top: 1px solid #eef2f7;
+  background: #fff;
+}
+
+.card-controls button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Delete animation — fade out + scale down a little */
+.card.fade-out {
+  opacity: 0;
+  transform: scale(0.98) translateY(6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* Small utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Responsive tweak — form stacks */
+@media (max-width: 640px) {
+  .card-form { grid-template-columns: 1fr; }
+  .card img { height: 180px; }
+}

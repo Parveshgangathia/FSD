@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dynamic Card Generator</title>
+
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Dynamic Card Generator</h1>
+
+    <section class="card-form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading" class="sr-only">Create a new card</h2>
+
+      <form id="cardForm" class="card-form" novalidate>
+        <label>
+          Title
+          <input type="text" name="title" id="title" placeholder="Card title" required>
+        </label>
+
+        <label>
+          Description
+          <textarea name="description" id="description" rows="3" placeholder="Short description" required></textarea>
+        </label>
+
+        <label>
+          Image URL
+          <input type="url" name="image" id="image" placeholder="https://example.com/photo.jpg">
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Create Card</button>
+          <button type="button" id="clearAll" class="btn-ghost">Clear All</button>
+        </div>
+      </form>
+    </section>
+
+    <section aria-live="polite" class="cards-wrap" id="cardsWrap">
+      <!-- Cards will be inserted here -->
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

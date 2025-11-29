@@ -96,11 +96,17 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
  
-### 📌 Day 03 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+### 📌 Day 08 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
 **Summary:**  
 - **JavaScript:**Dynamic Card Generator component added (grid, create form, fade-in/out, delete, clear-all). 
 - **Python:** Python script list_comprehensions.py with list comprehensions + normal loop equivalents. 
 - **Django:** Finished full CRUD for the todo app (Create → Read → Update → Delete).
+  
+---
+### 📌 Day 09 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+**Summary:**  
+- **JavaScript:**Built a Dark Mode / Light Mode Toggle with:. 
+- **Python:**Created a User Manager Program: Filter adults (age ≥ 18), Calculate average age, Find the oldest user, Nicely formatted output Practical logic similar to Django queryset filtering.
   
 ---
 
@@ -196,7 +202,15 @@ Day_08/
 ├── frontend/
 │   ├── dynamic_cards.html 
 └── python/
-    └── list_comprehensions.py  # new: LC exercises + normal loop versions
+    └── list_comprehensions.py
+Day_09/
+├── dark_light_mode/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── python_user_manager/
+    └── user_manager.py
+
 
 ```
 
@@ -308,7 +322,15 @@ Day_08/
 ├── frontend/
 │   ├── dynamic_cards.html 
 └── python/
-    └── list_comprehensions.py  # new: LC exercises + normal loop versions
+│   └── list_comprehensions.py
+Day_09/
+├── dark_light_mode/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── python_user_manager/
+    └── user_manager.py
+
 └── README.md
 
 ```

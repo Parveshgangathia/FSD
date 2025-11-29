@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TEST — Theme Toggle</title>
+
+    <!-- Inline tiny script to apply stored theme before CSS loads (prevents flash) -->
+    <script>
+      (function () {
+        try {
+          var k = "fsd_theme";
+          var v = localStorage.getItem(k);
+          if (v === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.classList.add("dark");
+          } else if (v === "light") {
+            document.documentElement.removeAttribute("data-theme");
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hdr">
+        <h2>Theme Toggle — Day_09</h2>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-pressed="false"
+          aria-label="Toggle theme"
+        >
+          <svg
+            class="iconsvg icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+          <svg
+            class="iconsvg icon-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            style="display: none"
+          >
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>Example content</h3>
+        <p>
+          This should change color when you toggle. Click the button to switch
+          theme.
+        </p>
+        <button class="btn">Action</button>
+        <div class="note">
+          Current &lt;html&gt; attributes: <span id="htmlAttrs"></span>
+        </div>
+        <div class="note">
+          Console output (open DevTools):
+          <pre id="consoleOut">—</pre>
+        </div>
+      </div>
+    </div>
+
+   <script src="script.js"></script>
+  </body>
+</html>

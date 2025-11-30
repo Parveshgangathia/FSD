@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search Filter UI — Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Search Filter</h1>
+      <p class="lead">Type to filter the list (case-insensitive). Smooth animations & "no results" message included.</p>
+    </header>
+
+    <div class="controls">
+      <label for="searchInput" class="sr-only">Search items</label>
+      <input id="searchInput" type="search" placeholder="Search items..." autocomplete="off" aria-label="Search items">
+    </div>
+
+    <section class="list-wrap" aria-live="polite" aria-atomic="true">
+      <ul id="itemList" class="item-grid">
+        <!-- 15 example items -->
+        <li class="item">Apple</li>
+        <li class="item">Banana</li>
+        <li class="item">Cherry</li>
+        <li class="item">Date</li>
+        <li class="item">Elderberry</li>
+        <li class="item">Fig</li>
+        <li class="item">Grape</li>
+        <li class="item">Honeydew</li>
+        <li class="item">Indian Fig</li>
+        <li class="item">Jackfruit</li>
+        <li class="item">Kiwi</li>
+        <li class="item">Lemon</li>
+        <li class="item">Mango</li>
+        <li class="item">Nectarine</li>
+        <li class="item">Orange</li>
+      </ul>
+
+      <div id="noResults" class="no-results" hidden>No results found.</div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -96,17 +96,24 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
  
-### 📌 Day 08 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+### 📌 Day 08 — Python, Django and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Dynamic Card Generator component added (grid, create form, fade-in/out, delete, clear-all). 
 - **Python:** Python script list_comprehensions.py with list comprehensions + normal loop equivalents. 
 - **Django:** Finished full CRUD for the todo app (Create → Read → Update → Delete).
   
 ---
-### 📌 Day 09 — CSS Flexbox + JavaScript DOM + Python + Django Setup (Completed)
+### 📌 Day 09 — Python and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Built a Dark Mode / Light Mode Toggle with:. 
+- **JavaScript:**Built a Dark Mode / Light Mode Toggle with. 
 - **Python:**Created a User Manager Program: Filter adults (age ≥ 18), Calculate average age, Find the oldest user, Nicely formatted output Practical logic similar to Django queryset filtering.
+  
+---
+
+### 📌 Day 010 — Python and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Search Filter Component. 
+- **Python:**Built a Student Marks Manager Program with clean, reusable functions.
   
 ---
 
@@ -204,12 +211,19 @@ Day_08/
 └── python/
     └── list_comprehensions.py
 Day_09/
-├── dark_light_mode/
+├── JavaSrcipt/ dark_light_mode/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
-└── python_user_manager/
-    └── user_manager.py
+└── Python/python_user_manager/
+│    └── user_manager.py
+Day_10/
+├── Python/
+│   └── student_marks_manager.py
+└── JaveScript/
+│    ├── index.html
+│    ├── style.css
+│    └── search.js
 
 
 ```
@@ -324,12 +338,20 @@ Day_08/
 └── python/
 │   └── list_comprehensions.py
 Day_09/
-├── dark_light_mode/
+├── JavaSrcipt/ dark_light_mode/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
-└── python_user_manager/
-    └── user_manager.py
+└── Python/python_user_manager/
+│    └── user_manager.py
+Day_10/
+├── Python/
+│   └── student_marks_manager.py
+└── JaveScript/
+│    ├── index.html
+│    ├── style.css
+│    └── search.js
+
 
 └── README.md
 

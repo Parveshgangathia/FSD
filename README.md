@@ -110,10 +110,18 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
 
-### 📌 Day 010 — Python and JavaScript (Completed)
+### 📌 Day 10 — Python and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Search Filter Component. 
 - **Python:**Built a Student Marks Manager Program with clean, reusable functions.
+  
+---
+
+
+### 📌 Day 11 — Python and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Modal Popup. 
+- **Python:**File Handling Basics.
   
 ---
 
@@ -224,6 +232,15 @@ Day_10/
 │    ├── index.html
 │    ├── style.css
 │    └── search.js
+Day_11/
+├── JavaScript/
+│   ├── index.html
+│   ├── style.css
+│   └── modal.js
+└── Python/
+│   ├── students.txt
+│   ├── topers.txt
+│   └── file_handler.py
 
 
 ```
@@ -351,8 +368,15 @@ Day_10/
 │    ├── index.html
 │    ├── style.css
 │    └── search.js
-
-
+Day_11/
+├── JavaScript/
+│   ├── index.html
+│   ├── style.css
+│   └── modal.js
+└── Python/
+│   ├── students.txt
+│   ├── topers.txt
+│   └── file_handler.py
 └── README.md
 
 ```

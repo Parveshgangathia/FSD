@@ -1,0 +1,7 @@
+Parvesh,100
+Amit,90
+Riya,78
+Deepak,92
+Priyanka,99
+Nitesh,89
+Bantu,40

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modal Component — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Modal Component Demo</h1>
+
+    <div class="controls">
+      <button id="openBtn" class="btn">Open Modal</button>
+      <button id="openAutoBtn" class="btn">Open (Auto-close 3s)</button>
+      <button id="openCustomBtn" class="btn">Open Custom Message</button>
+    </div>
+
+    <p class="note">This modal is reusable — use <code>openModal(content, {autoClose: ms})</code>.</p>
+  </main>
+
+  <script src="script.js" defer></script>
+  <script>
+    // demo wiring
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('openBtn');
+      const openAutoBtn = document.getElementById('openAutoBtn');
+      const openCustomBtn = document.getElementById('openCustomBtn');
+
+      openBtn.addEventListener('click', () => {
+        openModal(`<h2>Hello!</h2><p>This is a simple modal.</p>`);
+      });
+
+      openAutoBtn.addEventListener('click', () => {
+        openModal(`<h2>Auto-close</h2><p>This will close after 3 seconds.</p>`, { autoClose: 3000 });
+      });
+
+      openCustomBtn.addEventListener('click', () => {
+        // you can pass HTML string or DOM node
+        const content = document.createElement('div');
+        content.innerHTML = `<h2>Custom</h2><p>Rendered from a DOM node.</p>`;
+        openModal(content);
+      });
+    });
+  </script>
+</body>
+</html>

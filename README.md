@@ -125,6 +125,15 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
 
+### 📌 Day 11 — Python and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Live Character Counter,Built a modern UI component with Tailwind + JavaScript. 
+- **Python:**Worked with medium-level nested dictionary structures.
+- **Tailwind:**Installed Tailwind using CDN, Learned core Tailwind concepts: Utility-first CSS, Flexbox utilities (flex, items-center, justify-between), Background and text colors, Spacing classes (p-4, m-4), Rounded corners + shadows, Hover states (hover:bg-blue-600)
+ Built your first Tailwind Card Component with: White card box, Rounded corners, Shadow, Image, Title + description, Button with hover styles, Fully responsive
+
+---
+
 ## 📂 Files included:
 ```
 Day_01/
@@ -241,6 +250,13 @@ Day_11/
 │   ├── students.txt
 │   ├── topers.txt
 │   └── file_handler.py
+Day_12/
+├── Python/
+│   └── Dictonary Logic.py
+├── Tailwind/
+│   └── index.html
+└── JS/
+    └── index.html
 
 
 ```
@@ -377,6 +393,13 @@ Day_11/
 │   ├── students.txt
 │   ├── topers.txt
 │   └── file_handler.py
+Day_12/
+├── Python/
+│   └── Dictonary Logic.py
+├── Tailwind/
+│   └── index.html
+└── JS/
+    └── index.html
 └── README.md
 
 ```

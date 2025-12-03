@@ -125,13 +125,20 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
 
-### 📌 Day 11 — Python and JavaScript (Completed)
+### 📌 Day 12 — Python and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Live Character Counter,Built a modern UI component with Tailwind + JavaScript. 
 - **Python:**Worked with medium-level nested dictionary structures.
 - **Tailwind:**Installed Tailwind using CDN, Learned core Tailwind concepts: Utility-first CSS, Flexbox utilities (flex, items-center, justify-between), Background and text colors, Spacing classes (p-4, m-4), Rounded corners + shadows, Hover states (hover:bg-blue-600)
  Built your first Tailwind Card Component with: White card box, Rounded corners, Shadow, Image, Title + description, Button with hover styles, Fully responsive
 
+---
+
+### 📌 Day 13 — Python and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Toast Notification System. 
+- **Python:**List Comprehension Tasks.
+- **Tailwind:**Layout + Navbar + Grid System.
 ---
 
 ## 📂 Files included:
@@ -257,6 +264,15 @@ Day_12/
 │   └── index.html
 └── JS/
     └── index.html
+Day_12/
+├── Python/
+│   ├── list_comprehension + filter.py
+├── JS/
+│   ├── index.html
+│   └── toast.js
+└── Tailwind_Layout/
+    └── index.html
+
 
 
 ```
@@ -399,7 +415,15 @@ Day_12/
 ├── Tailwind/
 │   └── index.html
 └── JS/
-    └── index.html
+│  └── index.html
+Day_12/
+├── Python/
+│   ├── list_comprehension + filter.py
+├── JS/
+│   ├── index.html
+│   └── toast.js
+└── Tailwind_Layout/
+│   └── index.html
 └── README.md
 
 ```

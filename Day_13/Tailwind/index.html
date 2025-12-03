@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind Layout – Navbar + Card Grid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- 🌐 NAVBAR -->
+  <nav class="flex items-center justify-between p-4 bg-gray-900 text-white">
+    <!-- Brand -->
+    <h1 class="text-xl font-bold">FSD-Day_13(Tailwind)</h1>
+
+    <!-- Navigation Links -->
+    <div class="space-x-6 hidden md:block">
+      <a href="#" class="hover:text-blue-400 transition">Home</a>
+      <a href="#" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#" class="hover:text-blue-400 transition">Contact</a>
+    </div>
+
+    <!-- Login Button -->
+    <button class="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition">
+      Login
+    </button>
+  </nav>
+
+  <!-- Mobile Menu (Only visible on small screens) -->
+  <div class="p-4 bg-gray-800 text-white flex flex-col space-y-2 md:hidden">
+    <a href="#" class="hover:text-blue-400 transition">Home</a>
+    <a href="#" class="hover:text-blue-400 transition">Projects</a>
+    <a href="#" class="hover:text-blue-400 transition">Contact</a>
+  </div>
+
+  <!-- 🌟 MAIN GRID SECTION -->
+  <section class="p-6">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Featured Projects</h2>
+
+    <!-- Responsive Grid: 1 → 2 → 3 columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- CARD 1 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/400/250?random=1" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project One</h3>
+          <p class="text-gray-600 mb-4">
+            A short description of this project. Clean, modern card UI using Tailwind.
+          </p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            View Details
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/400/250?random=2" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+          <p class="text-gray-600 mb-4">
+            Tailwind makes building responsive layouts extremely easy and fast.
+          </p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            View Details
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://picsum.photos/400/250?random=3" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Three</h3>
+          <p class="text-gray-600 mb-4">
+            Fully responsive. Try resizing the window to see layout changes.
+          </p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            View Details
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

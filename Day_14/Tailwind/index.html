@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Dashboard — Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="min-h-screen flex">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 hidden md:block bg-gray-900 text-white p-6 space-y-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold">PK</div>
+        <div>
+          <h1 class="text-lg font-bold">MyDash</h1>
+          <p class="text-sm text-gray-300">Parvesh Kumar</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-col gap-2 text-sm">
+        <a href="#" class="block px-3 py-2 rounded hover:bg-gray-800 transition">Dashboard</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-gray-800 transition">Tasks</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-gray-800 transition">Profile</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-red-600 transition text-red-400">Logout</a>
+      </nav>
+
+      <div class="mt-auto text-sm text-gray-400">
+        © 2025 MyDash
+      </div>
+    </aside>
+
+    <!-- MAIN (content + topbar) -->
+    <div class="flex-1">
+
+      <!-- Mobile topbar (visible on small screens) -->
+      <header class="md:hidden bg-white border-b px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <button id="mobileMenuBtn" class="p-2 rounded-md hover:bg-gray-100">
+            <!-- hamburger -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <h2 class="text-lg font-semibold">Dashboard</h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="text-sm text-gray-600 hidden sm:block">Welcome back</div>
+          <div class="w-9 h-9 bg-blue-600 rounded-full text-white flex items-center justify-center font-semibold">PK</div>
+        </div>
+      </header>
+
+      <!-- mobile sidebar (hidden by default) -->
+      <div id="mobileMenu" class="md:hidden hidden bg-gray-900 text-white p-4">
+        <nav class="flex flex-col gap-2">
+          <a class="block px-3 py-2 rounded hover:bg-gray-800">Dashboard</a>
+          <a class="block px-3 py-2 rounded hover:bg-gray-800">Tasks</a>
+          <a class="block px-3 py-2 rounded hover:bg-gray-800">Profile</a>
+          <a class="block px-3 py-2 rounded hover:bg-red-600 text-red-400">Logout</a>
+        </nav>
+      </div>
+
+      <!-- Topbar (desktop) -->
+      <div class="hidden md:flex items-center justify-between px-6 py-4 bg-white border-b">
+        <div>
+          <h2 class="text-2xl font-bold">Dashboard</h2>
+          <p class="text-sm text-gray-500">Overview & statistics</p>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <input type="search" placeholder="Search..." class="hidden sm:block border rounded-full px-3 py-1 text-sm focus:ring-1 focus:ring-blue-400" />
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-gray-600">Hello, Parvesh</div>
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">PK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <main class="p-6">
+        <!-- Stat cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+          <div class="bg-white rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-gray-500">Users</div>
+                <div class="text-2xl font-bold">1,254</div>
+              </div>
+              <div class="bg-blue-50 text-blue-600 rounded-full p-3">
+                <!-- icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a4 4 0 00-3-3.87M9 20v-2a4 4 0 00-3-3.87M16 11a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-sm text-gray-400 mt-2">+12 new this week</div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-gray-500">Tasks</div>
+                <div class="text-2xl font-bold">82</div>
+              </div>
+              <div class="bg-yellow-50 text-yellow-600 rounded-full p-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4M7 7h6M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-sm text-gray-400 mt-2">5 overdue</div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-gray-500">Messages</div>
+                <div class="text-2xl font-bold">243</div>
+              </div>
+              <div class="bg-green-50 text-green-600 rounded-full p-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 8h10M7 12h4m1 8l-5 2V6a2 2 0 012-2h6a2 2 0 012 2v14l-5-2z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-sm text-gray-400 mt-2">18 new</div>
+          </div>
+        </div>
+
+        <!-- Big content card -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">Weekly Overview</h3>
+            <p class="text-gray-600 mb-4">A summary of activity this week. You can place graphs or charts here (Chart.js / Recharts / ApexCharts) when integrating with React.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <div class="text-sm text-gray-500">New Signups</div>
+                <div class="text-xl font-bold">184</div>
+                <div class="text-sm text-gray-400 mt-2">+8% vs last week</div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded">
+                <div class="text-sm text-gray-500">Completed Tasks</div>
+                <div class="text-xl font-bold">97</div>
+                <div class="text-sm text-gray-400 mt-2">+5% vs last week</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="bg-white rounded-lg shadow p-6">
+            <h4 class="text-lg font-semibold mb-2">Quick Actions</h4>
+            <div class="flex flex-col gap-3">
+              <button class="w-full text-left bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Create Task</button>
+              <button class="w-full text-left border rounded px-4 py-2 hover:bg-gray-50 transition">Import Data</button>
+              <button class="w-full text-left border rounded px-4 py-2 hover:bg-gray-50 transition">Generate Report</button>
+            </div>
+          </aside>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Optional small script to toggle mobile menu -->
+  <script>
+    const btn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (btn && mobileMenu) {
+      btn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

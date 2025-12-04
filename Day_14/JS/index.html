@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabs Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6">
+
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">Tabs Component</h1>
+
+    <!-- Tabs -->
+    <div id="tabs" class="flex space-x-2 mb-6">
+      <button data-tab="overview"  class="tab-btn bg-blue-600 text-white px-4 py-2 rounded-lg">Overview</button>
+      <button data-tab="projects"  class="tab-btn bg-gray-200 text-black px-4 py-2 rounded-lg">Projects</button>
+      <button data-tab="settings"  class="tab-btn bg-gray-200 text-black px-4 py-2 rounded-lg">Settings</button>
+      <button data-tab="about"     class="tab-btn bg-gray-200 text-black px-4 py-2 rounded-lg">About</button>
+    </div>
+
+    <!-- Content Panels -->
+    <div id="tab-content">
+
+      <div id="overview" class="tab-panel opacity-100">
+        <h2 class="text-xl font-semibold mb-2">Overview</h2>
+        <p class="text-gray-700">This is the overview section with general information about the user or the system.</p>
+      </div>
+
+      <div id="projects" class="tab-panel hidden opacity-0">
+        <h2 class="text-xl font-semibold mb-2">Projects</h2>
+        <p class="text-gray-700">This section contains project details and descriptions.</p>
+      </div>
+
+      <div id="settings" class="tab-panel hidden opacity-0">
+        <h2 class="text-xl font-semibold mb-2">Settings</h2>
+        <p class="text-gray-700">User settings and configuration options go here.</p>
+      </div>
+
+      <div id="about" class="tab-panel hidden opacity-0">
+        <h2 class="text-xl font-semibold mb-2">About</h2>
+        <p class="text-gray-700">This part shows details about the website, team, or company.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="tabs.js"></script>
+</body>
+</html>

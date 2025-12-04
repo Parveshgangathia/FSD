@@ -103,7 +103,7 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **Django:** Finished full CRUD for the todo app (Create → Read → Update → Delete).
   
 ---
-### 📌 Day 09 — Python and JavaScript (Completed)
+### 📌 Day 09 — Python, and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Built a Dark Mode / Light Mode Toggle with. 
 - **Python:**Created a User Manager Program: Filter adults (age ≥ 18), Calculate average age, Find the oldest user, Nicely formatted output Practical logic similar to Django queryset filtering.
@@ -125,7 +125,7 @@ I use a day-by-day folder structure to practice and build small projects that be
   
 ---
 
-### 📌 Day 12 — Python and JavaScript (Completed)
+### 📌 Day 12 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Live Character Counter,Built a modern UI component with Tailwind + JavaScript. 
 - **Python:**Worked with medium-level nested dictionary structures.
@@ -134,11 +134,20 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
-### 📌 Day 13 — Python and JavaScript (Completed)
+### 📌 Day 13 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
 - **JavaScript:**Toast Notification System. 
 - **Python:**List Comprehension Tasks.
 - **Tailwind:**Layout + Navbar + Grid System.
+
+---
+
+### 📌 Day 14 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Tabs Component, 4 tabs: Overview, Projects, Settings, About,Click to switch content, Smooth fade-in animation. 
+- **Python:** vTasks focusing on dictionary transformation.
+- **Tailwind:**Mini Dashboard UI.
+
 ---
 
 ## 📂 Files included:
@@ -264,12 +273,20 @@ Day_12/
 │   └── index.html
 └── JS/
     └── index.html
-Day_12/
+Day_13/
 ├── Python/
 │   ├── list_comprehension + filter.py
 ├── JS/
 │   ├── index.html
 │   └── toast.js
+└── Tailwind_Layout/
+    └── index.html
+Day_14/
+├── Python/
+│   ├── Dictionary_transformation.py
+├── JS/
+│   ├── index.html
+│   └── tabs.js
 └── Tailwind_Layout/
     └── index.html
 
@@ -416,7 +433,7 @@ Day_12/
 │   └── index.html
 └── JS/
 │  └── index.html
-Day_12/
+Day_13/
 ├── Python/
 │   ├── list_comprehension + filter.py
 ├── JS/
@@ -424,6 +441,14 @@ Day_12/
 │   └── toast.js
 └── Tailwind_Layout/
 │   └── index.html
+Day_14/
+├── Python/
+│   ├── Dictionary_transformation.py
+├── JS/
+│   ├── index.html
+│   └── tabs.js
+└── Tailwind_Layout/
+    └── index.html
 └── README.md
 
 ```

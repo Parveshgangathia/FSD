@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Accordion Component</title>
+
+  <style>
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .rotate {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-lg p-6 rounded-xl shadow-lg space-y-4">
+
+    <!-- Accordion Item 1 -->
+    <div class="accordion-item border rounded-lg">
+      <button class="accordion-header w-full flex justify-between items-center p-4 text-left">
+        <span class="font-semibold">Question 1</span>
+        <span class="arrow transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content px-4 pb-4 text-gray-600">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+
+    <!-- Accordion Item 2 -->
+    <div class="accordion-item border rounded-lg">
+      <button class="accordion-header w-full flex justify-between items-center p-4 text-left">
+        <span class="font-semibold">Question 2</span>
+        <span class="arrow transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content px-4 pb-4 text-gray-600">
+        Pellentesque habitant morbi tristique senectus et netus et malesuada.
+      </div>
+    </div>
+
+    <!-- Accordion Item 3 -->
+    <div class="accordion-item border rounded-lg">
+      <button class="accordion-header w-full flex justify-between items-center p-4 text-left">
+        <span class="font-semibold">Question 3</span>
+        <span class="arrow transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content px-4 pb-4 text-gray-600">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+      </div>
+    </div>
+
+    <!-- Accordion Item 4 -->
+    <div class="accordion-item border rounded-lg">
+      <button class="accordion-header w-full flex justify-between items-center p-4 text-left">
+        <span class="font-semibold">Question 4</span>
+        <span class="arrow transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content px-4 pb-4 text-gray-600">
+        At vero eos et accusamus et iusto odio dignissimos ducimus.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const items = document.querySelectorAll(".accordion-item");
+
+    items.forEach((item) => {
+      const header = item.querySelector(".accordion-header");
+      const content = item.querySelector(".accordion-content");
+      const arrow = item.querySelector(".arrow");
+
+      header.addEventListener("click", () => {
+        
+        // Close all other items
+        items.forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherContent = otherItem.querySelector(".accordion-content");
+            const otherArrow = otherItem.querySelector(".arrow");
+
+            otherContent.style.maxHeight = null;
+            otherArrow.classList.remove("rotate");
+            otherItem.classList.remove("bg-gray-100");
+          }
+        });
+
+        // Toggle current item
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          arrow.classList.remove("rotate");
+          item.classList.remove("bg-gray-100");
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          arrow.classList.add("rotate");
+          item.classList.add("bg-gray-100");
+        }
+
+      });
+    });
+  </script>
+
+</body>
+</html>

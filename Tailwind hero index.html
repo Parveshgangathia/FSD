@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Hero — Tailwind</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Animated highlight under the main heading */
+    .heading-highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+    .heading-highlight::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.12em;              /* distance from baseline */
+      height: 0.45em;              /* thickness of highlight */
+      width: 100%;
+      background: rgba(255,255,255,0.25);
+      transform-origin: left;
+      transform: scaleX(0.25);
+      transition: transform 600ms cubic-bezier(.2,.9,.3,1);
+      z-index: -1;
+      border-radius: 4px;
+      filter: blur(2px);
+    }
+    /* animate on load and on hover (desktop) */
+    .heading-highlight.animate::after {
+      animation: highlightExpand 1.2s ease-in-out forwards;
+    }
+    @keyframes highlightExpand {
+      0%   { transform: scaleX(0.25); opacity: 0.9; }
+      60%  { transform: scaleX(1.05); opacity: 1; }
+      100% { transform: scaleX(1); opacity: 1; }
+    }
+    /* optional: subtle floating animation for the illustration */
+    @keyframes floatY {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .float-anim {
+      animation: floatY 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Hero Section -->
+  <header class="w-full">
+    <div class="mx-auto max-w-7xl px-6 py-12 md:py-20">
+      <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow-xl p-6 md:p-12 text-white overflow-hidden">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+          <!-- Left: Text content -->
+          <div class="w-full md:w-1/2">
+            <p class="inline-block bg-white/10 text-sm rounded-full px-3 py-1 mb-4">New · Product update</p>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              <span class="heading-highlight animate">Build beautiful interfaces</span>
+              <br class="hidden md:block" />
+              for your next product
+            </h1>
+
+            <p class="mt-6 max-w-xl text-white/90 text-lg">
+              Ship faster with a modern design system powered by Tailwind. Clean components, responsive utilities, and a developer-first workflow to take your landing page from idea → live.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+              <a
+                href="#get-started"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-blue-600 font-semibold text-sm shadow hover:bg-blue-50 transition"
+                aria-label="Get Started"
+              >
+                Get Started
+              </a>
+
+              <a
+                href="#learn-more"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/10 text-white/95 font-medium text-sm border border-white/20 hover:bg-white/20 transition"
+                aria-label="Learn More"
+              >
+                Learn more
+              </a>
+            </div>
+
+            <!-- small features row -->
+            <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/90">
+              <span class="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Production-ready
+              </span>
+              <span class="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M3 11h18M5 21h14" />
+                </svg>
+                Fully responsive
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: Illustration -->
+          <div class="w-full md:w-1/2 flex items-center justify-center">
+            <!-- Use an inline SVG illustration (scales nicely). Hidden on very small screens -->
+            <div class="w-full max-w-md">
+              <svg class="w-full float-anim" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration">
+                <rect x="0" y="0" width="600" height="400" rx="20" fill="url(#g)" opacity="0.12"/>
+                <defs>
+                  <linearGradient id="g" x1="0" x2="1">
+                    <stop stop-color="#ffffff"></stop>
+                    <stop offset="1" stop-color="#000000"></stop>
+                  </linearGradient>
+                </defs>
+
+                <!-- simple device + cards illustration -->
+                <g transform="translate(60,40)">
+                  <rect x="0" y="0" width="320" height="220" rx="18" fill="#FFFFFF" opacity="0.12" />
+                  <rect x="12" y="14" width="296" height="34" rx="8" fill="#ffffff" opacity="0.08"/>
+                  <rect x="12" y="60" width="296" height="140" rx="10" fill="white" opacity="0.03"/>
+                  <!-- content cards -->
+                  <rect x="24" y="72" width="120" height="48" rx="8" fill="white" opacity="0.12"/>
+                  <rect x="156" y="72" width="120" height="48" rx="8" fill="white" opacity="0.08"/>
+                  <rect x="24" y="132" width="252" height="40" rx="8" fill="white" opacity="0.06"/>
+                  <!-- floating circular accent -->
+                  <circle cx="280" cy="20" r="28" fill="white" opacity="0.08"/>
+                </g>
+
+                <!-- small decorative elements -->
+                <circle cx="520" cy="80" r="8" fill="white" opacity="0.12"/>
+                <circle cx="480" cy="140" r="6" fill="white" opacity="0.08"/>
+                <rect x="430" y="220" width="110" height="60" rx="10" fill="white" opacity="0.06"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Optional script to trigger the highlight animation again when heading enters viewport (nice touch) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heading = document.querySelector(".heading-highlight");
+      // If you want to retrigger animation when in view:
+      if ("IntersectionObserver" in window && heading) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              heading.classList.add("animate");
+            }
+          });
+        }, { threshold: 0.5 });
+        io.observe(heading);
+      } else if (heading) {
+        // fallback: just add class
+        heading.classList.add("animate");
+      }
+    });
+  </script>
+
+</body>
+                  </html>

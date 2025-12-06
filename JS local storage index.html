@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notes — LocalStorage App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* NOTES ANIMATION */
+    .note-card {
+      transition: transform 220ms cubic-bezier(.2,.9,.3,1), opacity 200ms ease, max-height 200ms ease, margin 200ms ease, padding 200ms ease;
+      transform-origin: top;
+      will-change: transform, opacity;
+    }
+    .note-enter {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.995);
+      max-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+    .note-enter.note-enter-to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      max-height: 400px; /* large enough to fit */
+      margin: 0.75rem 0;
+      padding: 1rem;
+    }
+    .note-exit {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .note-exit.note-exit-to {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.98);
+      max-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* small helper for truncated text */
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-start justify-center py-10 px-4">
+
+  <div class="w-full max-w-4xl">
+
+    <!-- Header -->
+    <header class="mb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Notes</h1>
+      <p class="text-gray-600 mt-1">Save quick notes locally in your browser. Works offline using <code class="bg-gray-100 px-1 rounded">localStorage</code>.</p>
+    </header>
+
+    <!-- Controls -->
+    <section class="bg-white rounded-xl shadow p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Left: Note editor -->
+        <div class="md:col-span-2">
+          <label for="noteText" class="block text-sm font-medium text-gray-700 mb-2">Write a note</label>
+          <textarea id="noteText" rows="4" class="w-full rounded-lg border-gray-200 shadow-sm focus:ring-2 focus:ring-blue-300 p-3 resize-none" placeholder="Type something you want to remember..."></textarea>
+
+          <div class="mt-3 flex items-center gap-3">
+            <button id="saveBtn" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+              Save Note
+            </button>
+
+            <button id="clearAllBtn" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 text-red-700 border border-red-100 hover:bg-red-100 transition">
+              Clear All
+            </button>
+
+            <span id="status" class="ml-auto text-sm text-gray-500"></span>
+          </div>
+        </div>
+
+        <!-- Right: Search + Stats -->
+        <div>
+          <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Search notes</label>
+          <input id="search" type="search" placeholder="Search by text or date..." class="w-full rounded-lg border-gray-200 shadow-sm p-3 focus:ring-2 focus:ring-indigo-300" />
+
+          <div class="mt-4 text-sm text-gray-600 space-y-1">
+            <div>Notes saved: <span id="count" class="font-semibold">0</span></div>
+            <div>Last saved: <span id="lastSaved" class="font-medium">—</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes grid -->
+    <section id="notesWrap" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- note cards inserted here -->
+    </section>
+
+    <!-- Empty state -->
+    <div id="emptyState" class="mt-8 text-center text-gray-500 hidden">
+      <p class="text-lg font-medium">No notes yet</p>
+      <p class="mt-2">Write a quick note and press <strong>Save Note</strong>.</p>
+    </div>
+
+  </div>
+
+  <script>
+    // ---------- Constants ----------
+    const STORAGE_KEY = "notes";
+    const noteTextEl = document.getElementById("noteText");
+    const saveBtn = document.getElementById("saveBtn");
+    const notesWrap = document.getElementById("notesWrap");
+    const countEl = document.getElementById("count");
+    const lastSavedEl = document.getElementById("lastSaved");
+    const emptyState = document.getElementById("emptyState");
+    const statusEl = document.getElementById("status");
+    const searchEl = document.getElementById("search");
+    const clearAllBtn = document.getElementById("clearAllBtn");
+
+    // ---------- Helpers ----------
+    function loadNotes() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed;
+        return [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveNotes(notes) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+    }
+
+    function formatTimestamp(ts) {
+      const d = new Date(ts);
+      return d.toLocaleString(); // uses user's locale
+    }
+
+    function updateStats(notes) {
+      countEl.textContent = notes.length;
+      if (notes.length) {
+        const latest = notes.reduce((a,b) => a.timestamp > b.timestamp ? a : b);
+        lastSavedEl.textContent = formatTimestamp(latest.timestamp);
+      } else {
+        lastSavedEl.textContent = "—";
+      }
+      emptyState.classList.toggle("hidden", notes.length !== 0);
+    }
+
+    function createNoteElement(note) {
+      // card container
+      const card = document.createElement("article");
+      card.className = "note-card bg-white rounded-lg p-4 shadow border border-gray-100 flex flex-col justify-between";
+      card.dataset.id = note.id;
+
+      // top: content
+      const content = document.createElement("div");
+      content.className = "mb-3";
+
+      const meta = document.createElement("div");
+      meta.className = "flex items-center justify-between mb-2 gap-2";
+
+      const date = document.createElement("time");
+      date.className = "text-xs text-gray-400";
+      date.textContent = formatTimestamp(note.timestamp);
+      date.setAttribute("datetime", new Date(note.timestamp).toISOString());
+
+      const actions = document.createElement("div");
+      actions.className = "flex items-center gap-2";
+
+      const editBtn = document.createElement("button");
+      editBtn.className = "text-xs px-2 py-1 rounded bg-yellow-50 text-yellow-800 border border-yellow-100 hover:bg-yellow-100 transition";
+      editBtn.textContent = "Edit";
+
+      const delBtn = document.createElement("button");
+      delBtn.className = "text-xs px-2 py-1 rounded bg-red-50 text-red-700 border border-red-100 hover:bg-red-100 transition";
+      delBtn.textContent = "Delete";
+
+      actions.appendChild(editBtn);
+      actions.appendChild(delBtn);
+      meta.appendChild(date);
+      meta.appendChild(actions);
+
+      // body text (clamped)
+      const textDiv = document.createElement("div");
+      textDiv.className = "text-gray-800 text-sm line-clamp-3";
+      textDiv.textContent = note.text;
+
+      content.appendChild(meta);
+      content.appendChild(textDiv);
+
+      // footer: id or extra small info
+      const footer = document.createElement("div");
+      footer.className = "mt-3 flex items-center justify-between gap-2";
+
+      const idspan = document.createElement("span");
+      idspan.className = "text-xs text-gray-300";
+      idspan.textContent = "#" + note.id.toString().slice(-6);
+
+      footer.appendChild(idspan);
+
+      card.appendChild(content);
+      card.appendChild(footer);
+
+      // ========== Event handlers ==========
+      // Delete with exit animation
+      delBtn.addEventListener("click", () => {
+        // animate out then remove + update storage
+        card.classList.add("note-exit");
+        // ensure layout reflow so classes applied
+        requestAnimationFrame(() => card.classList.add("note-exit-to"));
+        card.addEventListener("transitionend", function onEnd(e) {
+          // only remove when opacity or max-height finished
+          if (e.propertyName === "opacity" || e.propertyName === "max-height") {
+            card.removeEventListener("transitionend", onEnd);
+            const notes = loadNotes().filter(n => n.id !== note.id);
+            saveNotes(notes);
+            renderNotes(notes);
+          }
+        });
+      });
+
+      // Edit: replace text with textarea inline
+      editBtn.addEventListener("click", () => {
+        // if already in edit mode, do nothing
+        if (card.querySelector("textarea")) return;
+
+        const currentText = note.text;
+        const ta = document.createElement("textarea");
+        ta.className = "w-full rounded border-gray-200 p-2 text-sm focus:ring-2 focus:ring-indigo-300";
+        ta.value = currentText;
+        ta.rows = 4;
+
+        // replace textDiv with textarea
+        content.replaceChild(ta, textDiv);
+        ta.focus();
+
+        // change Edit button to Save and add Cancel
+        editBtn.textContent = "Save";
+        const cancelBtn = document.createElement("button");
+        cancelBtn.className = "text-xs px-2 py-1 rounded bg-gray-50 text-gray-700 border border-gray-100 hover:bg-gray-100 transition";
+        cancelBtn.textContent = "Cancel";
+        actions.insertBefore(cancelBtn, delBtn);
+
+        cancelBtn.addEventListener("click", () => {
+          // restore original
+          content.replaceChild(textDiv, ta);
+          editBtn.textContent = "Edit";
+          cancelBtn.remove();
+        });
+
+        editBtn.onclick = () => {
+          const newVal = ta.value.trim();
+          if (!newVal) {
+            // small feedback
+            ta.classList.add("border-red-300");
+            ta.focus();
+            return;
+          }
+          // update storage
+          const notes = loadNotes().map(n => {
+            if (n.id === note.id) {
+              return {...n, text: newVal, timestamp: Date.now()};
+            }
+            return n;
+          });
+          saveNotes(notes);
+          // re-render to keep UI consistent
+          renderNotes(notes);
+        };
+      });
+
+      // return element
+      return card;
+    }
+
+    // ---------- Render function ----------
+    function renderNotes(notes, filter = "") {
+      // filter by text or date
+      const q = filter.trim().toLowerCase();
+      const filtered = notes.filter(n => {
+        if (!q) return true;
+        const txt = n.text.toLowerCase();
+        const dateStr = new Date(n.timestamp).toLocaleString().toLowerCase();
+        return txt.includes(q) || dateStr.includes(q) || n.id.toString().includes(q);
+      });
+
+      // Clear container
+      notesWrap.innerHTML = "";
+
+      // add nodes with enter animation
+      filtered.forEach(note => {
+        const el = createNoteElement(note);
+        // start in enter state
+        el.classList.add("note-enter");
+        notesWrap.appendChild(el);
+        // force reflow then add the class to animate to final
+        requestAnimationFrame(() => {
+          el.classList.add("note-enter-to");
+          // remove enter classes after transition completes to keep DOM clean
+          el.addEventListener("transitionend", function tEnd(ev) {
+            if (ev.propertyName === "max-height" || ev.propertyName === "opacity") {
+              el.classList.remove("note-enter", "note-enter-to");
+              el.removeEventListener("transitionend", tEnd);
+            }
+          });
+        });
+      });
+
+      updateStats(notes);
+      // show empty state when nothing matches
+      const hasAny = filtered.length > 0;
+      emptyState.classList.toggle("hidden", hasAny);
+    }
+
+    // ---------- Initialization ----------
+    function init() {
+      const notes = loadNotes();
+      renderNotes(notes);
+
+      // Save note
+      saveBtn.addEventListener("click", () => {
+        const text = noteTextEl.value.trim();
+        if (!text) {
+          // quick feedback
+          statusEl.textContent = "Please write something first.";
+          statusEl.classList.add("text-red-500");
+          setTimeout(() => { statusEl.textContent = ""; statusEl.classList.remove("text-red-500"); }, 1500);
+          noteTextEl.focus();
+          return;
+        }
+
+        const notes = loadNotes();
+        const newNote = {
+          id: Date.now(), // unique enough for this app
+          text,
+          timestamp: Date.now()
+        };
+        notes.unshift(newNote); // newest first
+        saveNotes(notes);
+        renderNotes(notes);
+
+        // clear editor and show saved
+        noteTextEl.value = "";
+        statusEl.textContent = "Saved!";
+        statusEl.classList.remove("text-red-500");
+        statusEl.classList.add("text-green-600");
+        setTimeout(() => { statusEl.textContent = ""; statusEl.classList.remove("text-green-600"); }, 1200);
+      });
+
+      // Live search filter
+      let searchTimeout = null;
+      searchEl.addEventListener("input", (e) => {
+        // small debounce
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          const q = e.target.value;
+          renderNotes(loadNotes(), q);
+        }, 120);
+      });
+
+      // Clear All (with confirmation)
+      clearAllBtn.addEventListener("click", () => {
+        if (!confirm("Delete all notes? This cannot be undone.")) return;
+        localStorage.removeItem(STORAGE_KEY);
+        renderNotes([]);
+      });
+
+      // keyboard shortcut: Ctrl+Enter to save when focus in textarea
+      noteTextEl.addEventListener("keydown", (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+          saveBtn.click();
+        }
+      });
+    }
+
+    // run
+    init();
+  </script>
+</body>
+            </html>

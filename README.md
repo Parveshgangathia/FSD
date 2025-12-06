@@ -22,7 +22,6 @@ This repository contains all my daily practice files, tasks, and small projects 
 ![VS Code](https://img.shields.io/badge/VS%20Code-0078D7?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ---
-
 ## 🔖 About this repository
 This repository tracks my **Full Stack Developer (FSD)** learning journey.  
 I use a day-by-day folder structure to practice and build small projects that become portfolio pieces.

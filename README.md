@@ -98,63 +98,63 @@ I use a day-by-day folder structure to practice and build small projects that be
  
 ### 📌 Day 08 — Python, Django and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Dynamic Card Generator component added (grid, create form, fade-in/out, delete, clear-all). 
+- **JavaScript:** Dynamic Card Generator component added (grid, create form, fade-in/out, delete, clear-all). 
 - **Python:** Python script list_comprehensions.py with list comprehensions + normal loop equivalents. 
 - **Django:** Finished full CRUD for the todo app (Create → Read → Update → Delete).
   
 ---
 ### 📌 Day 09 — Python, and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Built a Dark Mode / Light Mode Toggle with. 
-- **Python:**Created a User Manager Program: Filter adults (age ≥ 18), Calculate average age, Find the oldest user, Nicely formatted output Practical logic similar to Django queryset filtering.
+- **JavaScript:** Built a Dark Mode / Light Mode Toggle with. 
+- **Python:** Created a User Manager Program: Filter adults (age ≥ 18), Calculate average age, Find the oldest user, Nicely formatted output Practical logic similar to Django queryset filtering.
   
 ---
 
 ### 📌 Day 10 — Python and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Search Filter Component. 
-- **Python:**Built a Student Marks Manager Program with clean, reusable functions.
+- **JavaScript:** Search Filter Component. 
+- **Python:** Built a Student Marks Manager Program with clean, reusable functions.
   
 ---
 
 
 ### 📌 Day 11 — Python and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Modal Popup. 
-- **Python:**File Handling Basics.
+- **JavaScript:** Modal Popup. 
+- **Python:** File Handling Basics.
   
 ---
 
 ### 📌 Day 12 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Live Character Counter,Built a modern UI component with Tailwind + JavaScript. 
-- **Python:**Worked with medium-level nested dictionary structures.
-- **Tailwind:**Installed Tailwind using CDN, Learned core Tailwind concepts: Utility-first CSS, Flexbox utilities (flex, items-center, justify-between), Background and text colors, Spacing classes (p-4, m-4), Rounded corners + shadows, Hover states (hover:bg-blue-600)
+- **JavaScript:** Live Character Counter,Built a modern UI component with Tailwind + JavaScript. 
+- **Python:** Worked with medium-level nested dictionary structures.
+- **Tailwind:** Installed Tailwind using CDN, Learned core Tailwind concepts: Utility-first CSS, Flexbox utilities (flex, items-center, justify-between), Background and text colors, Spacing classes (p-4, m-4), Rounded corners + shadows, Hover states (hover:bg-blue-600)
  Built your first Tailwind Card Component with: White card box, Rounded corners, Shadow, Image, Title + description, Button with hover styles, Fully responsive
 
 ---
 
 ### 📌 Day 13 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Toast Notification System. 
-- **Python:**List Comprehension Tasks.
-- **Tailwind:**Layout + Navbar + Grid System.
+- **JavaScript:** Toast Notification System. 
+- **Python:** List Comprehension Tasks.
+- **Tailwind:** Layout + Navbar + Grid System.
 
 ---
 
 ### 📌 Day 14 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Tabs Component, 4 tabs: Overview, Projects, Settings, About,Click to switch content, Smooth fade-in animation. 
+- **JavaScript:** Tabs Component, 4 tabs: Overview, Projects, Settings, About,Click to switch content, Smooth fade-in animation. 
 - **Python:** vTasks focusing on dictionary transformation.
-- **Tailwind:**Mini Dashboard UI.
+- **Tailwind:** Mini Dashboard UI.
 
 ---
 
 ### 📌 Day 15 — Python, tailwind and JavaScript (Completed)
 **Summary:**  
-- **JavaScript:**Accordion Component. 
+- **JavaScript:** Accordion Component. 
 - **Python:** Lambda Functions + Sorting + Filtering.
-- **Tailwind:**TAILWIND FORMS + JS ACCORDION + PYTHON LAMBDA/SORT.
+- **Tailwind:** TAILWIND FORMS + JS ACCORDION + PYTHON LAMBDA/SORT.
 
 ---
 

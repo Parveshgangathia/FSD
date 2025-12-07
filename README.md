@@ -150,6 +150,31 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
+### 📌 Day 15 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:**Accordion Component. 
+- **Python:** Lambda Functions + Sorting + Filtering.
+- **Tailwind:**TAILWIND FORMS + JS ACCORDION + PYTHON LAMBDA/SORT.
+
+---
+
+### 📌 Day 16 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:** LocalStorage Notes App (Mini Project). 
+- **Python:** Error Handling (try/except Tasks).
+- **Tailwind:** Modern Hero Section (Landing Page Top Banner).
+
+---
+
+### 📌 Day 17 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:** Countdown Timer App. 
+- **Python:** Merging & Filtering.
+- **Tailwind:** Pricing Section (Professional Landing Page Component).
+
+---
+
+
 ## 📂 Files included:
 ```
 Day_01/
@@ -288,6 +313,28 @@ Day_14/
 │   ├── index.html
 │   └── tabs.js
 └── Tailwind_Layout/
+    └── index.html
+Day_15/
+├── Python/
+│   ├── Lambda Function + Sorting + Filtering.py
+├── JS/
+│   ├── Accordion.html
+└── Tailwind/
+    └── index.html
+Day_16/
+├── Python/
+│   ├── Error handle.py
+├── JS/
+│   ├── JS local storage index.html
+└── Tailwind/
+    └── Tailwind hero index.html
+Day_17/
+├── Python/
+│   ├── Merging and Filtering.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
     └── index.html
 
 
@@ -449,6 +496,28 @@ Day_14/
 │   └── tabs.js
 └── Tailwind_Layout/
     └── index.html
+Day_15/
+├── Python/
+│   ├── Lambda Function + Sorting + Filtering.py
+├── JS/
+│   ├── Accordion.html
+└── Tailwind/
+    └── index.html
+Day_16/
+├── Python/
+│   ├── Error handle.py
+├── JS/
+│   ├── JS local storage index.html
+└── Tailwind/
+    └── Tailwind hero index.html
+Day_17/
+├── Python/
+│   ├── Merging and Filtering.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html=
 └── README.md
 
 ```

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-100 via-white to-gray-100 min-h-screen flex items-center justify-center p-8">
+
+  <section class="w-full max-w-7xl">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Pricing Plans</h1>
+      <p class="mt-3 text-gray-600 text-lg">Choose the perfect plan for your business needs.</p>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Basic Plan -->
+      <div class="border rounded-xl shadow-lg p-8 bg-white hover:scale-105 transition-transform duration-300 flex flex-col">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Basic Plan</h2>
+        <p class="text-4xl font-extrabold text-gray-900 mb-4">₹499<span class="text-lg text-gray-500 font-medium">/mo</span></p>
+
+        <ul class="space-y-3 text-gray-600 mb-8">
+          <li>✔ 5 Projects</li>
+          <li>✔ Basic Support</li>
+          <li>✔ Community Access</li>
+          <li>✘ Advanced Analytics</li>
+        </ul>
+
+        <button class="mt-auto bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+      </div>
+
+      <!-- Standard Plan (Most Popular) -->
+      <div class="relative border rounded-xl shadow-2xl p-8 bg-white hover:scale-105 transition duration-300 flex flex-col">
+
+        <!-- Badge -->
+        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm px-3 py-1 rounded-full shadow-lg">
+          Most Popular
+        </span>
+
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-4">Standard Plan</h2>
+        <p class="text-4xl font-extrabold text-gray-900 mb-4">₹999<span class="text-lg text-gray-500 font-medium">/mo</span></p>
+
+        <ul class="space-y-3 text-gray-600 mb-8">
+          <li>✔ 15 Projects</li>
+          <li>✔ Priority Support</li>
+          <li>✔ Community Access</li>
+          <li>✔ Advanced Analytics</li>
+        </ul>
+
+        <button class="mt-auto bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="border rounded-xl shadow-lg p-8 bg-white hover:scale-105 transition-transform duration-300 flex flex-col">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Premium Plan</h2>
+        <p class="text-4xl font-extrabold text-gray-900 mb-4">₹1999<span class="text-lg text-gray-500 font-medium">/mo</span></p>
+
+        <ul class="space-y-3 text-gray-600 mb-8">
+          <li>✔ Unlimited Projects</li>
+          <li>✔ 24/7 Premium Support</li>
+          <li>✔ Access to All Features</li>
+          <li>✔ Custom Integrations</li>
+        </ul>
+
+        <button class="mt-auto bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

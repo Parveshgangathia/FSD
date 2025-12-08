@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Carousel — Auto + Manual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* slider track uses transform to show slides */
+    .slider-track {
+      transition: transform 600ms cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
+    }
+    .slide {
+      min-width: 100%;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-3xl">
+    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+
+      <!-- Slider viewport -->
+      <div id="viewport" class="overflow-hidden relative">
+        <div id="track" class="slider-track flex">
+          <!-- Slides (these are example Unsplash images; replace if you want) -->
+          <div class="slide flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1200&auto=format&fit=crop" alt="Slide 1" class="w-full h-64 object-cover" />
+          </div>
+          <div class="slide flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Slide 2" class="w-full h-64 object-cover" />
+          </div>
+          <div class="slide flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop" alt="Slide 3" class="w-full h-64 object-cover" />
+          </div>
+          <div class="slide flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Slide 4" class="w-full h-64 object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Prev / Next buttons -->
+      <button id="prevBtn" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button id="nextBtn" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <!-- Indicators -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <button class="dot w-3 h-3 rounded-full bg-white/60 ring-0" aria-label="Go to slide 1"></button>
+        <button class="dot w-3 h-3 rounded-full bg-white/40" aria-label="Go to slide 2"></button>
+        <button class="dot w-3 h-3 rounded-full bg-white/40" aria-label="Go to slide 3"></button>
+        <button class="dot w-3 h-3 rounded-full bg-white/40" aria-label="Go to slide 4"></button>
+      </div>
+
+    </div>
+
+    <!-- Optional caption / controls below -->
+    <div class="mt-4 flex items-center justify-between text-sm text-gray-600">
+      <div id="caption">Slide 1 / 4</div>
+      <div class="flex items-center gap-3">
+        <label class="inline-flex items-center gap-2">
+          <input id="autoplayToggle" type="checkbox" checked class="h-4 w-4" />
+          <span>Auto</span>
+        </label>
+        <button id="goFirst" class="px-3 py-1 bg-white rounded shadow text-gray-700">First</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link external JavaScript file -->
+  <script src="app.js"></script>
+</body>
+</html>

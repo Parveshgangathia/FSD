@@ -174,6 +174,14 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
+### 📌 Day 18 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:** Class Methods + Encapsulation. 
+- **Python:** Image Carousel / Slider (Auto + Manual).
+- **Tailwind:** Testimonials Section (Modern, Beautiful UI).
+
+---
+
 
 ## 📂 Files included:
 ```
@@ -336,7 +344,14 @@ Day_17/
 │   └── app.js
 └── Tailwind/
     └── index.html
-
+Day_18/
+├── Python/
+│   ├── Class Methods + Encapsulation.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
 
 
 ```
@@ -517,7 +532,15 @@ Day_17/
 │   ├── index.html
 │   └── app.js
 └── Tailwind/
-    └── index.html=
+    └── index.html
+Day_18/
+├── Python/
+│   ├── Class Methods + Encapsulation.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
 └── README.md
 
 ```

@@ -182,6 +182,13 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
+### 📌 Day 19 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:** Pro-Level Form Validation. 
+- **Python:** Sets & Tuples.
+- **Tailwind:** Responsive Footer Section.
+
+---
 
 ## 📂 Files included:
 ```
@@ -352,6 +359,15 @@ Day_18/
 │   └── app.js
 └── Tailwind/
     └── index.html
+Day_19/
+├── Python/
+│   ├── tuple.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
+
 
 
 ```
@@ -536,6 +552,14 @@ Day_17/
 Day_18/
 ├── Python/
 │   ├── Class Methods + Encapsulation.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
+Day_19/
+├── Python/
+│   ├── tuple.py
 ├── JS/
 │   ├── index.html
 │   └── app.js

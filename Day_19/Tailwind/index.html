@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Footer Component — Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-gray-200">
+
+  <!-- Page content placeholder -->
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="text-center text-gray-300 p-12">
+      <h1 class="text-3xl font-extrabold mb-4">Page Content Above Footer</h1>
+      <p class="max-w-xl mx-auto">This demo shows the footer component at the bottom. Scroll to see footer layout and responsiveness.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Brand -->
+        <div class="space-y-4">
+          <a href="#" class="inline-flex items-center gap-3">
+            <!-- Simple logo -->
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 6h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white">Parvesh Studio</span>
+          </a>
+
+          <p class="text-sm text-gray-400 max-w-md">
+            Building clean interfaces and usable components. I design and develop modern web experiences — simple, fast, and accessible.
+          </p>
+
+          <!-- social -->
+          <div class="flex items-center gap-3">
+            <a href="#" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="Twitter">
+              <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 19c8 0 12-6.5 12-12v-.5A8.6 8.6 0 0 0 22 4.6a8.3 8.3 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.4 8.4 8.4 0 0 1-2.7 1 4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3 3.6a4.1 4.1 0 0 0 1.3 5.4 4 4 0 0 1-1.9-.5v.05a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.8.07 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.6 11.7 11.7 0 0 0 8 20"/>
+              </svg>
+            </a>
+            <a href="#" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="GitHub">
+              <svg class="w-5 h-5 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.95 3.2 9.15 7.63 10.63.56.1.76-.24.76-.54 0-.27-.01-1-.02-1.96-3.1.68-3.75-1.5-3.75-1.5-.5-1.3-1.22-1.64-1.22-1.64-.99-.67.08-.66.08-.66 1.1.08 1.67 1.12 1.67 1.12.98 1.67 2.56 1.19 3.18.91.1-.72.38-1.19.69-1.46-2.47-.28-5.07-1.24-5.07-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.4.11-2.92 0 0 .95-.3 3.12 1.15a10.8 10.8 0 0 1 2.84-.38c.96 0 1.93.13 2.84.38 2.17-1.45 3.12-1.15 3.12-1.15.61 1.52.23 2.64.11 2.92.72.78 1.16 1.78 1.16 3 0 4.29-2.6 5.23-5.08 5.51.39.33.73.98.73 1.98 0 1.43-.01 2.58-.01 2.93 0 .3.2.65.77.54 4.43-1.48 7.62-5.68 7.62-10.63C23.25 5.48 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+            <a href="#" class="p-2 rounded-md hover:bg-gray-800 transition" aria-label="LinkedIn">
+              <svg class="w-5 h-5 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 0 .001 5.001A2.5 2.5 0 0 0 4.98 3.5zM3 9h4v12H3zM9 9h3.6v1.6h.05c.5-.95 1.73-1.95 3.56-1.95 3.8 0 4.5 2.5 4.5 5.7V21H17v-5.1c0-1.2 0-2.8-1.7-2.8-1.7 0-1.96 1.32-1.96 2.7V21H9z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:col-span-2">
+          <!-- Company -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-200 mb-4">Company</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition">About</a></li>
+              <li><a href="#" class="hover:text-white transition">Careers</a></li>
+              <li><a href="#" class="hover:text-white transition">Blog</a></li>
+              <li><a href="#" class="hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-200 mb-4">Support</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+              <li><a href="#" class="hover:text-white transition">Terms & Policies</a></li>
+              <li><a href="#" class="hover:text-white transition">Status</a></li>
+              <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-200 mb-4">Legal</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Cookies</a></li>
+              <li><a href="#" class="hover:text-white transition">Security</a></li>
+              <li><a href="#" class="hover:text-white transition">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter (full width) -->
+      <div class="mt-10 border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <h4 class="text-lg font-semibold text-white">Subscribe to our newsletter</h4>
+            <p class="text-sm text-gray-400">Get monthly updates — new components, tutorials, and freebies.</p>
+          </div>
+
+          <form id="newsletterForm" class="w-full md:w-auto flex gap-2 items-center" onsubmit="return false;">
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" type="email" required placeholder="Your email address"
+              class="w-full md:w-72 px-4 py-2 rounded-lg border border-gray-700 bg-gray-900 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <button id="subscribeBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition" type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <div id="newsletterMsg" class="mt-3 text-sm text-green-400 hidden"></div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <div>© 2025 Parvesh Kumar. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-white transition">Privacy</a>
+          <a href="#" class="hover:text-white transition">Terms</a>
+          <a href="#" class="hover:text-white transition">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple newsletter form handler (client-side only)
+    (function () {
+      const form = document.getElementById('newsletterForm');
+      const emailInput = document.getElementById('email');
+      const msg = document.getElementById('newsletterMsg');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+          msg.textContent = 'Please enter a valid email address.';
+          msg.classList.remove('hidden', 'text-green-400');
+          msg.classList.add('text-red-400');
+          return;
+        }
+
+        // simulate success (no backend)
+        msg.textContent = 'Thanks for subscribing! Check your inbox for a confirmation.';
+        msg.classList.remove('hidden', 'text-red-400');
+        msg.classList.add('text-green-400');
+
+        // clear input
+        emailInput.value = '';
+
+        // hide after 4s
+        setTimeout(() => {
+          msg.classList.add('hidden');
+        }, 4000);
+      });
+    })();
+  </script>
+</body>
+</html>

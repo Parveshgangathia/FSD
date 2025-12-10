@@ -190,6 +190,14 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
+### 📌 Day 20 — Python, tailwind and JavaScript (Completed)
+**Summary:**  
+- **JavaScript:** Tooltip Component System. 
+- **Python:** Mixed List + Dict Problems.
+- **Tailwind:** Blog Layout.
+
+---
+
 ## 📂 Files included:
 ```
 Day_01/
@@ -362,6 +370,14 @@ Day_18/
 Day_19/
 ├── Python/
 │   ├── tuple.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
+Day_20/
+├── Python/
+│   ├── List+Dic.py
 ├── JS/
 │   ├── index.html
 │   └── app.js
@@ -560,6 +576,14 @@ Day_18/
 Day_19/
 ├── Python/
 │   ├── tuple.py
+├── JS/
+│   ├── index.html
+│   └── app.js
+└── Tailwind/
+    └── index.html
+Day_20/
+├── Python/
+│   ├── List+Dic.py
 ├── JS/
 │   ├── index.html
 │   └── app.js

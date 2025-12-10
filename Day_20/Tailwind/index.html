@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Latest Articles — Blog Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* subtle card lift for hover using transform + shadow */
+    .card-hover {
+      transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(2,6,23,0.12);
+    }
+    /* clamp snippet to 3 lines */
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <header class="mb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold">Latest Articles</h1>
+      <p class="mt-2 text-gray-500 max-w-2xl mx-auto">
+        Curated reads on design, development, and product — updated weekly.
+      </p>
+    </header>
+
+    <!-- Blog grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-hover">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+               alt="Design systems" class="w-full h-48 object-cover">
+          <span class="absolute left-4 top-4 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+            Design
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h2 class="text-lg font-bold mb-2">Design systems: building consistent UI at scale</h2>
+          <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+            A practical guide to creating reusable components, tokens and documentation so teams deliver predictable and delightful interfaces.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline">
+              Read more →
+            </a>
+            <time class="text-xs text-gray-400">Aug 12, 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-hover">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+               alt="JavaScript patterns" class="w-full h-48 object-cover">
+          <span class="absolute left-4 top-4 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+            Tech
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h2 class="text-lg font-bold mb-2">Modern JavaScript patterns for maintainable code</h2>
+          <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+            Learn patterns that make your code more predictable and easier to test — modules, immutability, and composition techniques explained.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline">
+              Read more →
+            </a>
+            <time class="text-xs text-gray-400">Jul 30, 2025</time>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 card-hover">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1200&auto=format&fit=crop"
+               alt="Product strategy" class="w-full h-48 object-cover">
+          <span class="absolute left-4 top-4 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+            Product
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h2 class="text-lg font-bold mb-2">Putting users first: a product strategy playbook</h2>
+          <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+            Frameworks and rituals to keep user outcomes at the center of your roadmap and ship features that truly matter.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline">
+              Read more →
+            </a>
+            <time class="text-xs text-gray-400">Jun 18, 2025</time>
+          </div>
+        </div>
+      </article>
+      Card 4
+    </section>
+
+  </main>
+
+</body>
+</html>

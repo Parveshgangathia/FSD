@@ -198,6 +198,13 @@ I use a day-by-day folder structure to practice and build small projects that be
 
 ---
 
+### 📌 Day 21 — Python and React (Completed)
+**Summary:**  
+- **React:** React Setup. 
+- **Python:** Text cleaner.
+
+---
+
 ## 📂 Files included:
 ```
 Day_01/
@@ -383,212 +390,10 @@ Day_20/
 │   └── app.js
 └── Tailwind/
     └── index.html
-
-
-
-```
-
----
-
-## 📂 Repository Structure
-
-```text
-FSD/
-├── Day_01/
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── even_number.py
-├──Day_02/
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── filter_names.py
-├── Day_03/ 
-│   ├── index.html
-│   ├── about.html
-│   ├── contact.html
-│   ├── styles.css
-│   ├── hidden_message.js
-│   ├── python
-│   │   ├── students_score.py
-│   ├── django
-│   │   ├──mysite
-│   │   ├──mysite
-│   │   ├──myapp
-│   │   ├──db.sqlite3
-│   │   └──manage.py
-Day_04/
-├── django
-│   ├── mysite/
-│   │   ├── mysite/
-│   │   ├── myapp/
-│   │   │   ├── templates/
-│   │   │   │   ├── myapp/
-│   │   │   │   │   ├── base.html
-│   │   │   │   │   ├── home.html
-│   │   │   │   │   ├── about.html
-│   │   │   │   │   └── contact.html
-│   │   │   ├── static/myapp/css/style.css
-│   │   │   ├── static/myapp/js/main.js
-│   │   │   ├── static/myapp/images/avatar.png (optional)
-│   │   │   └── views.py / urls.py
-│   │   ├── db.sqlite3
-│   │   └── manage.py
-├── python_practice
-│   ├── filter_numbers.py
-│   ├── split_even_odd.py
-│   ├── count_long_strings.py
-│   ├── remove_duplicates.py
-│   └── count_vowels.py
-Day_05/
-├── js_todo_app/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── python_task/
-│   └── expensive_items.py
-├── django/
-│   ├── manage.py
-│   ├── <project_folder>/
-│   └── todo/
-│       ├── templates/
-│       │   └── todo/
-│       │       ├── home.html
-│       │       └── add.html
-│       ├── views.py
-│       ├── urls.py
-│       └── apps.py
-Day_06/
-├── django/
-│   ├── manage.py
-│   ├── mysite/
-│   │   ├── mysite/
-│   │   ├── db.sqlite3
-│   │   ├── todo/
-│   │   │   ├── models.py
-│   │   │   ├── views.py
-│   │   │   ├── urls.py
-│   │   │   ├── templates/
-│   │   │   │   └── todo/
-│   │   │   │        ├── home.html
-│   │   │   │        └── add.html
-│   │   │   ├── static/
-│   │   │   │   └── todo/
-│   │   │   │        ├── style.css
-│   │   │   │        └── ajax.js
-│   │   │   └── apps.py
-├── python_task/
-│   └── filter_by_price.py
-Day_07/
-├── Random Qoute Generator/
-│   ├── index.html
-│   ├──script.js
-│   └──style.css
-└── python/
-│   ├──Print names in reverse order.py
-│   ├──Print only first names in Title Case.py
-│   ├──Python Name Formatter Program.py
-│   └──User input name Format.py
-Day_08/
-├── django/
-│   ├── todo/
-├── frontend/
-│   ├── dynamic_cards.html 
-└── python/
-│   └── list_comprehensions.py
-Day_09/
-├── JavaSrcipt/ dark_light_mode/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-└── Python/python_user_manager/
-│    └── user_manager.py
-Day_10/
-├── Python/
-│   └── student_marks_manager.py
-└── JaveScript/
-│    ├── index.html
-│    ├── style.css
-│    └── search.js
-Day_11/
-├── JavaScript/
-│   ├── index.html
-│   ├── style.css
-│   └── modal.js
-└── Python/
-│   ├── students.txt
-│   ├── topers.txt
-│   └── file_handler.py
-Day_12/
-├── Python/
-│   └── Dictonary Logic.py
-├── Tailwind/
-│   └── index.html
-└── JS/
-│  └── index.html
-Day_13/
-├── Python/
-│   ├── list_comprehension + filter.py
-├── JS/
-│   ├── index.html
-│   └── toast.js
-└── Tailwind_Layout/
-│   └── index.html
-Day_14/
-├── Python/
-│   ├── Dictionary_transformation.py
-├── JS/
-│   ├── index.html
-│   └── tabs.js
-└── Tailwind_Layout/
-    └── index.html
-Day_15/
-├── Python/
-│   ├── Lambda Function + Sorting + Filtering.py
-├── JS/
-│   ├── Accordion.html
-└── Tailwind/
-    └── index.html
-Day_16/
-├── Python/
-│   ├── Error handle.py
-├── JS/
-│   ├── JS local storage index.html
-└── Tailwind/
-    └── Tailwind hero index.html
-Day_17/
-├── Python/
-│   ├── Merging and Filtering.py
-├── JS/
-│   ├── index.html
-│   └── app.js
-└── Tailwind/
-    └── index.html
-Day_18/
-├── Python/
-│   ├── Class Methods + Encapsulation.py
-├── JS/
-│   ├── index.html
-│   └── app.js
-└── Tailwind/
-    └── index.html
-Day_19/
-├── Python/
-│   ├── tuple.py
-├── JS/
-│   ├── index.html
-│   └── app.js
-└── Tailwind/
-    └── index.html
-Day_20/
+Day_21/
 ├── Python/
 │   ├── List+Dic.py
-├── JS/
-│   ├── index.html
-│   └── app.js
-└── Tailwind/
-    └── index.html
+└── React_01/
 └── README.md
 
 ```

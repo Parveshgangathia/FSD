@@ -1,0 +1,4 @@
+Aman,Sales,35000
+Riya,Tech,50000
+Simran,HR,30000
+Karan,Tech,60000

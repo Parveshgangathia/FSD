@@ -393,6 +393,12 @@ Day_20/
 Day_21/
 ├── Python/
 │   ├── List+Dic.py
+Day_22/
+├── Python/
+│   ├── List+Dic.py
+Day_23/
+├── Python/
+│   ├── List+Dic.py
 └── React_01/
 └── README.md
 

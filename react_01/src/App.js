@@ -1,28 +1,36 @@
 import { useState } from "react";
 import "./index.css";
+
 import TaskList from "./components/TaskList";
+import TaskInput from "./components/TaskInput";
 import ProfileCard from "./components/ProfileCard";
 import ContactForm from "./components/ContactForm";
 import AuthToggle from "./components/AuthToggle";
 import Button from "./components/Button";
+import Input from "./components/input";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  function handleAddTask() {
-    if (newTask.trim() === "") return;
+  // Input kit demo state
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
+  function handleAddTask(newTask) {
     setLoading(true);
 
-    // simulate async action
     setTimeout(() => {
       setTasks([...tasks, newTask]);
-      setNewTask("");
       setLoading(false);
     }, 500);
   }
+
+  // Filter tasks (case-insensitive)
+  const filteredTasks = tasks.filter((task) =>
+    task.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="p-6 space-y-12 max-w-2xl mx-auto">
@@ -40,33 +48,58 @@ function App() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Task Manager</h2>
 
-        <div className="flex gap-3">
-          <input
-            type="text"
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            placeholder="Enter a new task"
-            className="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+        <TaskInput onAddTask={handleAddTask} loading={loading} />
 
-          <Button
-            variant="primary"
-            onClick={handleAddTask}
-            loading={loading}
-          >
-            Add Task
-          </Button>
-        </div>
+        {/* Search */}
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
 
-        <TaskList tasks={tasks} />
+        {filteredTasks.length === 0 && searchQuery !== "" ? (
+          <p className="text-gray-500">No results found.</p>
+        ) : (
+          <TaskList tasks={filteredTasks} />
+        )}
 
-        {/* Button Variants Demo */}
+        {/* Button Variants */}
         <div className="flex gap-3 flex-wrap">
           <Button variant="secondary">Secondary</Button>
           <Button variant="danger">Danger</Button>
           <Button variant="outline">Outline</Button>
           <Button disabled>Disabled</Button>
         </div>
+      </section>
+
+      {/* Input Components Kit */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Input Components</h2>
+
+        <Input
+          label="Email"
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          error={email === "" ? "Email is required" : ""}
+        />
+
+        <Input
+          label="Message"
+          textarea
+          placeholder="Write a message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+
+        <Input
+          label="Disabled Input"
+          value="Disabled field"
+          disabled
+        />
       </section>
 
       {/* Profile Card */}

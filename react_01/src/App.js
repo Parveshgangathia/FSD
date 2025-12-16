@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 
 import TaskList from "./components/TaskList";
@@ -7,16 +7,37 @@ import ProfileCard from "./components/ProfileCard";
 import ContactForm from "./components/ContactForm";
 import AuthToggle from "./components/AuthToggle";
 import Button from "./components/Button";
-import Input from "./components/input";
+import Input from "./components/Input";
+import Loading from "./components/Loading";
+import Posts from "./components/Posts";
+
 
 function App() {
+  // Page loading (NEW)
+  const [pageLoading, setPageLoading] = useState(true);
+
+  // Existing states
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [count, setCount] = useState(0);
 
-  // Input kit demo state
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // Fake loading screen (runs once)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Page title side effect
+  useEffect(() => {
+    document.title = `Count: ${count}`;
+  }, [count]);
 
   function handleAddTask(newTask) {
     setLoading(true);
@@ -27,10 +48,14 @@ function App() {
     }, 500);
   }
 
-  // Filter tasks (case-insensitive)
   const filteredTasks = tasks.filter((task) =>
     task.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // CONDITIONAL RENDER (IMPORTANT)
+  if (pageLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="p-6 space-y-12 max-w-2xl mx-auto">
@@ -38,6 +63,16 @@ function App() {
       <h1 className="text-3xl font-bold text-center">
         React Practice Dashboard
       </h1>
+
+      {/* useEffect Demo */}
+      <section className="space-y-3 text-center">
+        <h2 className="text-2xl font-semibold">useEffect Demo</h2>
+        <p className="text-lg">Count: {count}</p>
+
+        <Button variant="primary" onClick={() => setCount(count + 1)}>
+          Increase Count
+        </Button>
+      </section>
 
       {/* Auth Toggle */}
       <section>
@@ -50,7 +85,6 @@ function App() {
 
         <TaskInput onAddTask={handleAddTask} loading={loading} />
 
-        {/* Search */}
         <input
           type="text"
           placeholder="Search tasks..."
@@ -65,7 +99,6 @@ function App() {
           <TaskList tasks={filteredTasks} />
         )}
 
-        {/* Button Variants */}
         <div className="flex gap-3 flex-wrap">
           <Button variant="secondary">Secondary</Button>
           <Button variant="danger">Danger</Button>
@@ -74,7 +107,7 @@ function App() {
         </div>
       </section>
 
-      {/* Input Components Kit */}
+      {/* Input Components */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Input Components</h2>
 
@@ -102,15 +135,22 @@ function App() {
         />
       </section>
 
-      {/* Profile Card */}
       <section>
         <ProfileCard />
       </section>
 
-      {/* Contact Form */}
       <section>
         <ContactForm />
       </section>
+      {/* API Posts */}
+        <section className="space-y-4">
+           <h2 className="text-2xl font-semibold">
+    Posts (API + useEffect)
+          </h2>
+
+        <Posts />
+        </section>
+
 
     </div>
   );

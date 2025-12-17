@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
+import CreatePost from "./components/CreatePost";
+import Modal from "./components/Modal";
 import TaskList from "./components/TaskList";
 import TaskInput from "./components/TaskInput";
 import ProfileCard from "./components/ProfileCard";
@@ -11,8 +13,15 @@ import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Posts from "./components/Posts";
 
-
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [localPosts, setLocalPosts] = useState([]);
+
+  function handlePostCreated(newPost) {
+    setLocalPosts([newPost, ...localPosts]);
+    setIsModalOpen(false);
+  }
+
   // Page loading (NEW)
   const [pageLoading, setPageLoading] = useState(true);
 
@@ -59,7 +68,6 @@ function App() {
 
   return (
     <div className="p-6 space-y-12 max-w-2xl mx-auto">
-
       <h1 className="text-3xl font-bold text-center">
         React Practice Dashboard
       </h1>
@@ -128,11 +136,7 @@ function App() {
           onChange={(e) => setMessage(e.target.value)}
         />
 
-        <Input
-          label="Disabled Input"
-          value="Disabled field"
-          disabled
-        />
+        <Input label="Disabled Input" value="Disabled field" disabled />
       </section>
 
       <section>
@@ -142,16 +146,39 @@ function App() {
       <section>
         <ContactForm />
       </section>
+      {/* Create Post */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Create Post</h2>
+
+        <Button variant="primary" onClick={() => setIsModalOpen(true)}>
+          New Post
+        </Button>
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <h3 className="text-xl font-bold mb-4">New Post</h3>
+          <CreatePost onPostCreated={handlePostCreated} />
+        </Modal>
+
+        {/* Local Posts List (Optimistic UI) */}
+        <div className="space-y-3">
+          {localPosts.map((post) => (
+            <div
+              key={post.id}
+              className="border rounded-xl p-4 bg-white shadow"
+            >
+              <h4 className="font-bold">{post.title}</h4>
+              <p className="text-sm text-gray-600">{post.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* API Posts */}
-        <section className="space-y-4">
-           <h2 className="text-2xl font-semibold">
-    Posts (API + useEffect)
-          </h2>
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Posts (API + useEffect)</h2>
 
         <Posts />
-        </section>
-
-
+      </section>
     </div>
   );
 }

@@ -446,7 +446,7 @@ Contact: pk8352082260@gmail.com
 - HTML5
 - CSS
 - JavaScript(process)
-- React (planned)
+- React (process)
 - node.js (planned)
 
 ### **Backend**

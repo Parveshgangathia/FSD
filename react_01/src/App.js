@@ -12,6 +12,9 @@ import Button from "./components/Button";
 import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Posts from "./components/Posts";
+import TimerCounter from "./components/TimerCounter";
+import AutoHideAlert from "./components/AutoHideAlert";
+import NotificationsPanel from "./components/NotificationsPanel";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +23,18 @@ function App() {
   function handlePostCreated(newPost) {
     setLocalPosts([newPost, ...localPosts]);
     setIsModalOpen(false);
+  }
+  const [showTimer, setShowTimer] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [notifications, setNotifications] = useState([]);
+
+  function addNotification(type, message) {
+    setNotifications((prev) => [{ id: Date.now(), type, message }, ...prev]);
+  }
+
+  function removeNotification(id) {
+    setNotifications((prev) => prev.filter((n) => n.id !== id));
   }
 
   // Page loading (NEW)
@@ -114,6 +129,36 @@ function App() {
           <Button disabled>Disabled</Button>
         </div>
       </section>
+      {/* useEffect Cleanup Demo */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Cleanup & Timers</h2>
+
+        <Button onClick={() => setShowTimer(!showTimer)}>
+          {showTimer ? "Unmount Timer" : "Mount Timer"}
+        </Button>
+
+        {showTimer && <TimerCounter />}
+
+        <Button onClick={() => setShowAlert(true)}>Show Auto-Hide Alert</Button>
+
+        {showAlert && (
+          <AutoHideAlert
+            message="This will disappear in 3 seconds"
+            onClose={() => setShowAlert(false)}
+          />
+        )}
+
+        <Button
+          onClick={() => addNotification("success", "Saved successfully")}
+        >
+          Add Notification
+        </Button>
+      </section>
+
+      <NotificationsPanel
+        notifications={notifications}
+        removeNotification={removeNotification}
+      />
 
       {/* Input Components */}
       <section className="space-y-4">

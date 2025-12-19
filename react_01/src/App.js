@@ -15,6 +15,11 @@ import Posts from "./components/Posts";
 import TimerCounter from "./components/TimerCounter";
 import AutoHideAlert from "./components/AutoHideAlert";
 import NotificationsPanel from "./components/NotificationsPanel";
+import FocusInput from "./components/FocusInput";
+import RenderCounter from "./components/RenderCounter";
+import AccessibleLoginForm from "./components/AccessibleLoginForm";
+
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -217,6 +222,15 @@ function App() {
           ))}
         </div>
       </section>
+      
+      <section className="space-y-6">
+  <h2 className="text-2xl font-semibold">useRef & Accessibility</h2>
+
+  <FocusInput />
+  <RenderCounter />
+  <AccessibleLoginForm />
+</section>
+
 
       {/* API Posts */}
       <section className="space-y-4">

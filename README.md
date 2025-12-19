@@ -203,6 +203,12 @@ I use a day-by-day folder structure to practice and build small projects that be
 - **React:** React Setup. 
 - **Python:** Text cleaner.
 
+---
+
+### 📌 Day 21 — Python and React (Completed)
+**Summary:**  
+- **React:** React Setup. 
+- **Python:** Text cleaner.
 
 ---
 

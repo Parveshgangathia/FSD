@@ -1,0 +1,11 @@
+2025-12-20 21:12:44,513 - INFO - App started
+2025-12-20 21:12:44,514 - INFO - Attempting division
+2025-12-20 21:12:44,514 - ERROR - An error occurred
+Traceback (most recent call last):
+  File "d:\90 days challenge\FSD\Day_30\logging_basics.py", line 29, in main
+    result = divide(10, 0)
+  File "d:\90 days challenge\FSD\Day_30\logging_basics.py", line 22, in divide
+    return a / b
+           ~~^~~
+ZeroDivisionError: division by zero
+2025-12-20 21:12:44,520 - INFO - App finished

@@ -19,60 +19,64 @@ import FocusInput from "./components/FocusInput";
 import RenderCounter from "./components/RenderCounter";
 import AccessibleLoginForm from "./components/AccessibleLoginForm";
 
-
-
 function App() {
+  // Modal + Posts
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [localPosts, setLocalPosts] = useState([]);
 
   function handlePostCreated(newPost) {
-    setLocalPosts([newPost, ...localPosts]);
+    setLocalPosts((prev) => [newPost, ...prev]);
     setIsModalOpen(false);
   }
+
+  // Timers & Alerts
   const [showTimer, setShowTimer] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
+  // Notifications
   const [notifications, setNotifications] = useState([]);
 
   function addNotification(type, message) {
-    setNotifications((prev) => [{ id: Date.now(), type, message }, ...prev]);
+    setNotifications((prev) => [
+      { id: Date.now(), type, message },
+      ...prev,
+    ]);
   }
 
   function removeNotification(id) {
     setNotifications((prev) => prev.filter((n) => n.id !== id));
   }
 
-  // Page loading (NEW)
+  // Page loading
   const [pageLoading, setPageLoading] = useState(true);
 
-  // Existing states
+  // Task manager
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // useEffect demo
   const [count, setCount] = useState(0);
 
+  // Inputs
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // Fake loading screen (runs once)
+  // Fake loading screen
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setPageLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setPageLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Page title side effect
+  // Page title effect
   useEffect(() => {
     document.title = `Count: ${count}`;
   }, [count]);
 
   function handleAddTask(newTask) {
     setLoading(true);
-
     setTimeout(() => {
-      setTasks([...tasks, newTask]);
+      setTasks((prev) => [...prev, newTask]);
       setLoading(false);
     }, 500);
   }
@@ -81,7 +85,6 @@ function App() {
     task.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // CONDITIONAL RENDER (IMPORTANT)
   if (pageLoading) {
     return <Loading />;
   }
@@ -96,16 +99,12 @@ function App() {
       <section className="space-y-3 text-center">
         <h2 className="text-2xl font-semibold">useEffect Demo</h2>
         <p className="text-lg">Count: {count}</p>
-
-        <Button variant="primary" onClick={() => setCount(count + 1)}>
+        <Button onClick={() => setCount((c) => c + 1)}>
           Increase Count
         </Button>
       </section>
 
-      {/* Auth Toggle */}
-      <section>
-        <AuthToggle />
-      </section>
+      <AuthToggle />
 
       {/* Task Manager */}
       <section className="space-y-4">
@@ -114,14 +113,13 @@ function App() {
         <TaskInput onAddTask={handleAddTask} loading={loading} />
 
         <input
-          type="text"
-          placeholder="Search tasks..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Search tasks..."
+          className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
         />
 
-        {filteredTasks.length === 0 && searchQuery !== "" ? (
+        {filteredTasks.length === 0 && searchQuery ? (
           <p className="text-gray-500">No results found.</p>
         ) : (
           <TaskList tasks={filteredTasks} />
@@ -130,21 +128,23 @@ function App() {
         <div className="flex gap-3 flex-wrap">
           <Button variant="secondary">Secondary</Button>
           <Button variant="danger">Danger</Button>
-          <Button variant="outline">Outline</Button>
           <Button disabled>Disabled</Button>
         </div>
       </section>
-      {/* useEffect Cleanup Demo */}
+
+      {/* Cleanup & Timers */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Cleanup & Timers</h2>
 
-        <Button onClick={() => setShowTimer(!showTimer)}>
+        <Button onClick={() => setShowTimer((v) => !v)}>
           {showTimer ? "Unmount Timer" : "Mount Timer"}
         </Button>
 
         {showTimer && <TimerCounter />}
 
-        <Button onClick={() => setShowAlert(true)}>Show Auto-Hide Alert</Button>
+        <Button onClick={() => setShowAlert(true)}>
+          Show Auto-Hide Alert
+        </Button>
 
         {showAlert && (
           <AutoHideAlert
@@ -153,9 +153,7 @@ function App() {
           />
         )}
 
-        <Button
-          onClick={() => addNotification("success", "Saved successfully")}
-        >
+        <Button onClick={() => addNotification("success", "Saved successfully")}>
           Add Notification
         </Button>
       </section>
@@ -165,23 +163,20 @@ function App() {
         removeNotification={removeNotification}
       />
 
-      {/* Input Components */}
+      {/* Inputs */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Input Components</h2>
 
         <Input
           label="Email"
-          type="email"
-          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          error={email === "" ? "Email is required" : ""}
+          error={!email ? "Email is required" : ""}
         />
 
         <Input
           label="Message"
           textarea
-          placeholder="Write a message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
@@ -189,53 +184,44 @@ function App() {
         <Input label="Disabled Input" value="Disabled field" disabled />
       </section>
 
-      <section>
-        <ProfileCard />
-      </section>
+      <ProfileCard />
+      <ContactForm />
 
-      <section>
-        <ContactForm />
-      </section>
       {/* Create Post */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Create Post</h2>
 
-        <Button variant="primary" onClick={() => setIsModalOpen(true)}>
-          New Post
-        </Button>
+        <Button onClick={() => setIsModalOpen(true)}>New Post</Button>
 
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <h3 className="text-xl font-bold mb-4">New Post</h3>
           <CreatePost onPostCreated={handlePostCreated} />
         </Modal>
 
-        {/* Local Posts List (Optimistic UI) */}
-        <div className="space-y-3">
-          {localPosts.map((post) => (
-            <div
-              key={post.id}
-              className="border rounded-xl p-4 bg-white shadow"
-            >
-              <h4 className="font-bold">{post.title}</h4>
-              <p className="text-sm text-gray-600">{post.body}</p>
-            </div>
-          ))}
-        </div>
+        {localPosts.map((post) => (
+          <div key={post.id} className="border rounded-xl p-4 shadow">
+            <h4 className="font-bold">{post.title}</h4>
+            <p className="text-sm text-gray-600">{post.body}</p>
+          </div>
+        ))}
       </section>
-      
+
+      {/* useRef & Accessibility */}
       <section className="space-y-6">
-  <h2 className="text-2xl font-semibold">useRef & Accessibility</h2>
+        <h2 className="text-2xl font-semibold">
+          useRef & Accessibility
+        </h2>
 
-  <FocusInput />
-  <RenderCounter />
-  <AccessibleLoginForm />
-</section>
-
+        <FocusInput />
+        <RenderCounter />
+        <AccessibleLoginForm />
+      </section>
 
       {/* API Posts */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Posts (API + useEffect)</h2>
-
+        <h2 className="text-2xl font-semibold">
+          Posts (API + useEffect)
+        </h2>
         <Posts />
       </section>
     </div>

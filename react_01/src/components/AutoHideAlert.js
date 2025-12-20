@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import useAutoClose from "../hooks/useAutoClose";
 
 function AutoHideAlert({ message, onClose }) {
   useEffect(() => {

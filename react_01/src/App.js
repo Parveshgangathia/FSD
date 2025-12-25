@@ -12,6 +12,10 @@ import Overview from "./pages/dashboard/Overview";
 import Projects from "./pages/dashboard/Projects";
 import Settings from "./pages/dashboard/Settings";
 
+import RoleRoute from "./routes/RoleRoute";
+import Unauthorized from "./pages/Unauthorized";
+import AdminDashboard from "./pages/dashboard/AdminDashboard";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -22,6 +26,17 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        {/* Unauthorized */}
+<Route path="/unauthorized" element={<Unauthorized />} />
+
+<Route
+  path="/admin"
+  element={
+    <RoleRoute allowed={["admin"]}>
+      <AdminDashboard />
+    </RoleRoute>
+  }
+/>
 
         {/* Protected dashboard */}
         <Route

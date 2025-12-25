@@ -1,0 +1,18 @@
+2025-12-25 22:01:24,256 - INFO - admin performed read
+2025-12-25 22:01:24,257 - INFO - admin performed write
+2025-12-25 22:01:24,257 - INFO - admin performed delete
+2025-12-25 22:01:24,257 - INFO - user performed read
+2025-12-25 22:01:24,257 - WARNING - Access denied: user cannot write
+2025-12-25 22:01:24,257 - WARNING - Access denied: user cannot delete
+2025-12-25 22:02:15,265 - INFO - admin performed read
+2025-12-25 22:02:15,265 - INFO - admin performed write
+2025-12-25 22:02:15,265 - INFO - admin performed delete
+2025-12-25 22:02:15,265 - INFO - user performed read
+2025-12-25 22:02:15,265 - WARNING - Access denied: user cannot write
+2025-12-25 22:02:15,266 - WARNING - Access denied: user cannot delete
+2025-12-25 22:02:30,653 - INFO - admin performed read
+2025-12-25 22:02:30,655 - INFO - admin performed write
+2025-12-25 22:02:30,655 - INFO - admin performed delete
+2025-12-25 22:02:30,655 - INFO - user performed read
+2025-12-25 22:02:30,655 - WARNING - Access denied: user cannot write
+2025-12-25 22:02:30,655 - WARNING - Access denied: user cannot delete

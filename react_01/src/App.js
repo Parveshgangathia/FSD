@@ -38,6 +38,7 @@ function App() {
   }
 />
 
+
         {/* Protected dashboard */}
         <Route
           path="/dashboard"

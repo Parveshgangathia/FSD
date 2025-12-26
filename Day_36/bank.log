@@ -1,0 +1,4 @@
+2025-12-26 22:26:45,308 - INFO - Withdrawal successful: 1000
+2025-12-26 22:26:59,545 - INFO - Withdrawal successful: 1000
+2025-12-26 22:26:59,545 - ERROR - Invalid input: Amount must be positive
+2025-12-26 22:26:59,545 - WARNING - Permission denied: Insufficient funds

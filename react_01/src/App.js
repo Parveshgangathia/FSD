@@ -1,62 +1,70 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
 import Layout from "./components/Layout";
-
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
-import Unauthorized from "./pages/Unauthorized";
-
-import DashboardLayout from "./pages/DashboardLayout";
-import Overview from "./pages/dashboard/Overview";
-import Projects from "./pages/dashboard/Projects";
-import Settings from "./pages/dashboard/Settings";
-import AdminDashboard from "./pages/dashboard/AdminDashboard";
-
 import ProtectedRoute from "./components/ProtectedRoute";
 import RoleRoute from "./routes/RoleRoute";
+import PageSkeleton from "./components/PageSkeleton";
+
+/* -------- Lazy Loaded Pages -------- */
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Login = lazy(() => import("./pages/Login"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Unauthorized = lazy(() => import("./pages/Unauthorized"));
+
+const DashboardLayout = lazy(() => import("./pages/DashboardLayout"));
+const Overview = lazy(() => import("./pages/dashboard/Overview"));
+const Projects = lazy(() => import("./pages/dashboard/Projects"));
+const Settings = lazy(() => import("./pages/dashboard/Settings"));
+const AdminDashboard = lazy(() =>
+  import("./pages/dashboard/AdminDashboard")
+);
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+      {/* Suspense wraps ALL lazy routes */}
+      <Suspense fallback={<PageSkeleton />}>
+        <Routes>
+          {/* -------- Public Routes -------- */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
 
-        {/* Unauthorized */}
-        <Route path="/unauthorized" element={<Unauthorized />} />
+          {/* -------- Unauthorized -------- */}
+          <Route path="/unauthorized" element={<Unauthorized />} />
 
-        {/* Admin Route */}
-        <Route
-          path="/admin"
-          element={
-            <RoleRoute allowed={["admin"]}>
-              <AdminDashboard />
-            </RoleRoute>
-          }
-        />
+          {/* -------- Admin Route -------- */}
+          <Route
+            path="/admin"
+            element={
+              <RoleRoute allowed={["admin"]}>
+                <AdminDashboard />
+              </RoleRoute>
+            }
+          />
 
-        {/* Protected Dashboard with Nested Routes */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <DashboardLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="overview" element={<Overview />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
+          {/* -------- Protected Dashboard (Nested) -------- */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="overview" element={<Overview />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
 
-        {/* 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* -------- 404 -------- */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }

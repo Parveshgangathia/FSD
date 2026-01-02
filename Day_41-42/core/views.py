@@ -1,61 +1,35 @@
-from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Task
-import json
-from django.views.decorators.csrf import csrf_exempt
-# HttpResponse
-from django.http import HttpResponse, JsonResponse
+from .serializers import TaskSerializer
 
-# 1. Simple Text Response (Sanity Check)
+from django.http import JsonResponse
+
 def home(request):
-    return HttpResponse("Backend is working!")
+    return JsonResponse({
+        "message": "Welcome to the Task Manager API",
+        "available_routes": [
+            "/api/tasks/"
+        ]
+    })
 
-# 2. JSON Response (The Language of APIs)
-def hello_api(request):
-    data = {
-        "message": "Hello from Django!",
-        "status": "success"
-    }
-    return JsonResponse(data)
-# Reading from database
-def tasks_list(request):
-    # 1. Get all tasks from the DB
-    tasks = Task.objects.all()
+# ... (Leave your TaskListCreate class below this) ...
+class TaskListCreate(APIView):
+    # 1. Handle GET requests (List all tasks)
+    def get(self, request):
+        tasks = Task.objects.all()
+        # serializer converts DB objects -> JSON format
+        serializer = TaskSerializer(tasks, many=True)
+        return Response(serializer.data)
 
-    # 2. Convert Python objects to a simple list of dictionaries
-    data = []
-    for task in tasks:
-        data.append({
-            "id": task.id,
-            "title": task.title,
-            "completed": task.completed
-        })
+    # 2. Handle POST requests (Create a new task)
+    def post(self, request):
+        # serializer converts JSON input -> Python object
+        serializer = TaskSerializer(data=request.data)
 
-    # 3. Return as JSON
-    # 'safe=False' is needed because we are sending a list, not a dict
-    return JsonResponse(data, safe=False)
+        if serializer.is_valid():
+            serializer.save() # Saves to DB automatically
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-#Writing to the Datebase (POST)
-@csrf_exempt  # Allows requests without a browser cookie (good for APIs)
-def create_task(request):
-    # Only allow POST method
-    if request.method == "POST":
-        # 1. Parse the incoming JSON data
-        try:
-            body = json.loads(request.body)
-
-            # 2. Create the task in the database
-            task = Task.objects.create(
-                title=body.get("title", "Untitled Task")
-            )
-
-            # 3. Return the new task back to the user
-            return JsonResponse({
-                "id": task.id,
-                "title": task.title,
-                "completed": task.completed,
-                "message": "Task created successfully"
-            })
-        except json.JSONDecodeError:
-            return JsonResponse({"error": "Invalid JSON"}, status=400)
-
-    return JsonResponse({"error": "POST method required"}, status=405)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
